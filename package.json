@@ -1,5 +1,5 @@
 {
-  "name": "rc_mobile_base",
+  "name": "rc-mobile-base",
   "version": "0.0.1",
   "description": "Shared codebase for roomchecking mobile apps",
   "main": "lib/index.js",
