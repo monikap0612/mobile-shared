@@ -4,16 +4,17 @@
   "description": "Shared codebase for roomchecking mobile apps",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf lib dist es coverage",
+    "clean": "rimraf lib",
     "lint": "npm run lint:src",
-    "lint:src": "eslint src test build",
-    "test": "cross-env BABEL_ENV=commonjs jest",
+    "lint:fix": "npm run lint:src -- --fix",
+    "lint:src": "eslint src test",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register ./test/**/*.test.js",
     "test:watch": "npm test -- --watch",
     "check:src": "npm run lint:src && npm run test",
+    "check": "npm run check:src",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build": "npm run build:commonjs",
-    "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax lib/ dist/ --kill --print"
+    "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax lib/ --kill --print"
   },
   "author": "",
   "license": "MIT",
@@ -21,7 +22,6 @@
     "babel-cli": "^6.3.15",
     "babel-core": "^6.3.15",
     "babel-eslint": "^4.1.6",
-    "babel-jest": "^15.0.0",
     "babel-loader": "^6.2.0",
     "babel-plugin-check-es2015-constants": "^6.3.13",
     "babel-plugin-transform-es2015-arrow-functions": "^6.3.13",
@@ -45,14 +45,20 @@
     "babel-plugin-transform-es3-property-literals": "^6.5.0",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-register": "^6.3.13",
+    "chai": "^3.5.0",
     "check-es3-syntax-cli": "^0.1.1",
     "cross-env": "^1.0.7",
+    "enzyme": "^2.5.1",
     "eslint": "^1.10.3",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^3.16.1",
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
-    "jest": "^15.1.1",
+    "mocha": "^3.1.2",
     "rimraf": "^2.3.4"
+  },
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "reduxsauce": "^0.2.0"
   }
 }
