@@ -8,14 +8,14 @@ import updates from './updates'
 import users from './users'
 
 const actions = {
-  assets,
-  auth,
-  glitches,
-  overlay,
-  rooms,
-  routes,
-  updates,
-  users
+  ...assets,
+  ...auth,
+  ...glitches,
+  ...overlay,
+  ...rooms,
+  ...routes,
+  ...updates,
+  ...users
 }
 
 export default actions
