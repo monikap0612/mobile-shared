@@ -55,9 +55,8 @@
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
     "mocha": "^3.1.2",
-    "rimraf": "^2.3.4"
-  },
-  "dependencies": {
+    "rimraf": "^2.3.4",
+
     "lodash": "^4.16.4",
     "moment": "^2.15.1",
     "ramda": "^0.22.1",
