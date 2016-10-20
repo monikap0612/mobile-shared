@@ -69,5 +69,15 @@
     "reduxsauce": "^0.2.0",
     "reselect": "^2.5.4",
     "seamless-immutable": "^6.3.0"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "sagas.js",
+    "utils.js",
+    "actions.js",
+    "constants.js",
+    "reducers.js",
+    "selectors.js"
+  ]
 }
