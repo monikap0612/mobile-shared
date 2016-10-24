@@ -1,4 +1,4 @@
-import AssetsTypes from '../constants/assets'
+import AssetsTypes from '../constants/assets';
 
 export function resetAssets() {
   return {

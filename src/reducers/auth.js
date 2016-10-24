@@ -1,7 +1,7 @@
-import Immutable from 'seamless-immutable'
-import { createReducer } from 'reduxsauce'
+import Immutable from 'seamless-immutable';
+import { createReducer } from 'reduxsauce';
 
-import AuthTypes from '../constants/auth'
+import AuthTypes from '../constants/auth';
 
 export const INITIAL_STATE = Immutable({
   isActiveHotel: false,
@@ -16,26 +16,28 @@ export const INITIAL_STATE = Immutable({
   hotelId: null,
   token: null,
   error: null
-})
+});
 
 const ACTION_HANDLERS = {
   [AuthTypes.HOTEL_REQUEST]: (state, { hotel }) => {
     return state
-      .set('hotelUsername', hotel)
+      .set('hotelUsername', hotel);
   },
-  [AuthTypes.HOTEL_SUCCESS]: (state, { name, images, users }) => {
+  [AuthTypes.HOTEL_SUCCESS]: (state, {name, images, users}) => {
     return state
       .set('isActiveHotel', true)
       .set('hotelName', name)
       .set('hotelImage', images)
-      .set('hotelUsers', users)
+      .set('hotelUsers', users);
   },
   [AuthTypes.HOTEL_FAILURE]: (state) => {
-    return state
+    return state;
   },
-  [AuthTypes.USER_SUCCESS]: (state, { token, hotel, user, groups }) => {
-    const { _id: userId } = user
-    const { _id: hotelId } = hotel
+  [AuthTypes.USER_SUCCESS]: (state, { token, hotel, user, groups}) => {
+    const { _id: userId } = user;
+    const { _id: hotelId } = hotel;
+
+    console.log(token, hotel, user, groups, userId, hotelId);
 
     return state
       .set('token', token)
@@ -43,14 +45,17 @@ const ACTION_HANDLERS = {
       .set('user', user)
       .set('userId', userId)
       .set('hotelId', hotelId)
-      .set('groups', groups)
+      .set('groups', groups);
   },
   [AuthTypes.USER_FAILURE]: (state) => {
-    return state
+    return state;
   },
-  [AuthTypes.HOTEL_RESET]: () => {
-    return INITIAL_STATE
+  [AuthTypes.HOTEL_FETCH_SUCCESS]: (state, { hotel }) => {
+    return state.set('hotel', hotel);
+  },
+  [AuthTypes.HOTEL_RESET]: (state) => {
+    return INITIAL_STATE;
   }
-}
+};
 
-export default createReducer(INITIAL_STATE, ACTION_HANDLERS)
+export default createReducer(INITIAL_STATE, ACTION_HANDLERS);

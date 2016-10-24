@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   USERS_FETCH
@@ -8,4 +8,4 @@ export default createTypes(`
   GROUPS_FETCH
   GROUPS_SUCCESS
   GROUPS_FAILURE
-`)
+`);

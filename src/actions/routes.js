@@ -1,4 +1,4 @@
-import RoutesTypes from '../constants/routes'
+import RoutesTypes from '../constants/routes';
 
 export function routeWillBack(nav) {
   return {

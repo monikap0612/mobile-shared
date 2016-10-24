@@ -1,4 +1,4 @@
-import RoomsTypes from '../constants/rooms'
+import RoomsTypes from '../constants/rooms';
 
 export function resetRooms() {
   return {
@@ -15,8 +15,7 @@ export function activateRoom(roomId) {
 
 export function deactivateRoom(roomId) {
   return {
-    type: RoomsTypes.ROOM_DEACTIVATE,
-    roomId
+    type: RoomsTypes.ROOM_DEACTIVATE
   }
 }
 
@@ -104,6 +103,20 @@ export function planningsNightSuccess({ planningsNight }) {
   }
 }
 
+export function planningsRunnerFetch() {
+  return {
+    type: RoomsTypes.PLANNINGS_RUNNER_FETCH
+  }
+}
+
+export function planningsRunnerSuccess({ planningRunners }) {
+
+  return {
+    type: RoomsTypes.PLANNINGS_RUNNER_SUCCESS,
+    planningRunners
+  }
+}
+
 export function calendarFetch() {
   return {
     type: RoomsTypes.CALENDAR_FETCH
@@ -160,6 +173,13 @@ export function tasksSuccess({ tasks }) {
   }
 }
 
+export function taskUpdateSuccess({ task }) {
+  return {
+    type: RoomsTypes.TASK_UPDATE_SUCCESS,
+    task
+  }
+}
+
 export default {
   resetRooms,
   roomsFetch,
@@ -174,6 +194,8 @@ export default {
   planningsSuccess,
   planningsNightFetch,
   planningsNightSuccess,
+  planningsRunnerFetch,
+  planningsRunnerSuccess,
   calendarFetch,
   calendarSuccess,
   roomNotesFetch,
@@ -182,6 +204,7 @@ export default {
   catalogsSuccess,
   tasksFetch,
   tasksSuccess,
+  taskUpdateSuccess,
   activateRoom,
   deactivateRoom
 }

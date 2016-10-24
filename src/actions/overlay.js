@@ -1,4 +1,4 @@
-import OverlayTypes from '../constants/overlay'
+import OverlayTypes from '../constants/overlay';
 
 export function overlayShow({ icon, message, color }) {
   return {

@@ -1,4 +1,4 @@
-import AuthTypes from '../constants/auth'
+import AuthTypes from '../constants/auth';
 
 export function hotelRequest(hotel) {
   return {
@@ -32,7 +32,7 @@ export function userRequest({ hotelUsername, username, password }) {
   }
 }
 
-export function userSuccess({ token, user, hotel, groups }) {
+export function userSuccess({ token, user, hotel, groups}) {
   return {
     type: AuthTypes.USER_SUCCESS,
     token,
@@ -42,7 +42,21 @@ export function userSuccess({ token, user, hotel, groups }) {
   }
 }
 
-export function userFailure() {
+export function userFailure(error) {
+  console.log(error);
+}
+
+export function hotelFetch() {
+  return {
+    type: AuthTypes.HOTEL_FETCH
+  }
+}
+
+export function hotelFetchSuccess({ hotel }) {
+  return {
+    type: AuthTypes.HOTEL_FETCH_SUCCESS,
+    hotel
+  }
 }
 
 export function hotelReset() {
@@ -64,6 +78,8 @@ export default {
   userRequest,
   userSuccess,
   userFailure,
+  hotelFetch,
+  hotelFetchSuccess,
   hotelReset,
   logout
 }

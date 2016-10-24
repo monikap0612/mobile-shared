@@ -1,181 +1,184 @@
-import { takeLatest } from 'redux-saga'
-import { put, call, select } from 'redux-saga/effects'
-import moment from 'moment'
+import { takeLatest, delay, take } from 'redux-saga';
+import { put, call, select } from 'redux-saga/effects';
+import moment from 'moment';
 
-import AssetsTypes from '../constants/assets'
-import AssetsActions from '../actions/assets'
+import AssetsTypes from '../constants/assets';
+import AssetsActions from '../actions/assets';
 
-import request from '../utils/request'
+import request from '../utils/request';
+import API_URL from '../api';
 
-export default function ({ apiUrl }) {
-  const ASSETS_API = `${apiUrl}/assets`
-  const VIRTUAL_ASSETS_API = `${apiUrl}/virtual_assets`
-  const ASSET_ROOMS_API = `${apiUrl}/asset_rooms`
-  const CUSTOM_ACTIONS_API = `${apiUrl}/custom_actions`
-  const ROOM_AREAS_API = `${apiUrl}/room_areas`
-  const INVENTORY_WITHDRAWALS_API = `${apiUrl}/hotel_inventory_activity/withdrawal?start_date`
+const ASSETS_API = `${API_URL}/assets`;
+const VIRTUAL_ASSETS_API = `${API_URL}/virtual_assets`;
+const ASSET_ROOMS_API = `${API_URL}/asset_rooms`;
+const CUSTOM_ACTIONS_API = `${API_URL}/custom_actions`;
+const ROOM_AREAS_API = `${API_URL}/room_areas`;
+const INVENTORY_WITHDRAWALS_API = `${API_URL}/hotel_inventory_activity/withdrawal?start_date`;
 
-  // Hotel Assets
-  function * fetchAssets() {
-    const { auth: { token } } = yield select()
+// Hotel Assets
+export function * fetchAssets() {
+  const { auth: { hotelId, token } } = yield select();
 
-    return yield call(request, ASSETS_API, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchAssetsFlow() {
-    try {
-      const data = yield call(fetchAssets)
-      yield put(AssetsActions.assetsSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, ASSETS_API, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
+  });
+}
+
+export function * fetchAssetsFlow() {
+  try {
+    const data = yield call(fetchAssets);
+    yield put(AssetsActions.assetsSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchAssetsFlow() {
-    yield * takeLatest(AssetsTypes.ASSETS_FETCH, fetchAssetsFlow)
-  }
+export function * watchAssetsFlow(state) {
+  yield * takeLatest(AssetsTypes.ASSETS_FETCH, fetchAssetsFlow);
+}
 
-  // Hotel Virtual Assets
-  function * fetchVirtualAssets() {
-    const { auth: { token } } = yield select()
+// Hotel Virtual Assets
+export function * fetchVirtualAssets() {
+  const { auth: { hotelId, token } } = yield select();
 
-    return yield call(request, VIRTUAL_ASSETS_API, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchVirtualAssetsFlow() {
-    try {
-      const data = yield call(fetchVirtualAssets)
-      yield put(AssetsActions.virtualAssetsSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, VIRTUAL_ASSETS_API, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
+  });
+}
+
+export function * fetchVirtualAssetsFlow() {
+  try {
+    const data = yield call(fetchVirtualAssets);
+    yield put(AssetsActions.virtualAssetsSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchVirtualAssetsFlow() {
-    yield * takeLatest(AssetsTypes.VIRTUAL_ASSETS_FETCH, fetchVirtualAssetsFlow)
-  }
+export function * watchVirtualAssetsFlow(state) {
+  yield * takeLatest(AssetsTypes.VIRTUAL_ASSETS_FETCH, fetchVirtualAssetsFlow);
+}
 
-  // Hotel Asset Rooms
-  function * fetchAssetRooms() {
-    const { auth: { token } } = yield select()
+// Hotel Asset Rooms
+export function * fetchAssetRooms() {
+  const { auth: { hotelId, token } } = yield select();
 
-    return yield call(request, ASSET_ROOMS_API, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchAssetRoomsFlow() {
-
-    try {
-      const data = yield call(fetchAssetRooms)
-      yield put(AssetsActions.assetRoomsSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, ASSET_ROOMS_API, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
+  });
+}
+
+export function * fetchAssetRoomsFlow() {
+
+  try {
+    const data = yield call(fetchAssetRooms);
+    yield put(AssetsActions.assetRoomsSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchAssetRoomsFlow() {
-    yield * takeLatest(AssetsTypes.ASSET_ROOMS_FETCH, fetchAssetRoomsFlow)
-  }
+export function * watchAssetRoomsFlow(state) {
+  yield * takeLatest(AssetsTypes.ASSET_ROOMS_FETCH, fetchAssetRoomsFlow);
+}
 
-  // Hotel Custom Actions
-  function * fetchCustomActions() {
-    const { auth: { token } } = yield select()
+// Hotel Custom Actions
+export function * fetchCustomActions() {
+  const { auth: { hotelId, token } } = yield select();
 
-    return yield call(request, CUSTOM_ACTIONS_API, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchCustomActionsFlow() {
-
-    try {
-      const data = yield call(fetchCustomActions)
-      yield put(AssetsActions.customActionsSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, CUSTOM_ACTIONS_API, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
+  });
+}
+
+export function * fetchCustomActionsFlow() {
+
+  try {
+    const data = yield call(fetchCustomActions);
+    yield put(AssetsActions.customActionsSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchCustomActionsFlow() {
-    yield * takeLatest(AssetsTypes.CUSTOM_ACTIONS_FETCH, fetchCustomActionsFlow)
-  }
+export function * watchCustomActionsFlow(state) {
+  yield * takeLatest(AssetsTypes.CUSTOM_ACTIONS_FETCH, fetchCustomActionsFlow);
+}
 
-  // Hotel Room Areas
-  function * fetchRoomAreas() {
-    const { auth: { token } } = yield select()
+// Hotel Room Areas
+export function * fetchRoomAreas() {
+  const { auth: { hotelId, token } } = yield select();
 
-    return yield call(request, ROOM_AREAS_API, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchRoomAreasFlow() {
-
-    try {
-      const data = yield call(fetchRoomAreas)
-      yield put(AssetsActions.roomAreasSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, ROOM_AREAS_API, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
+  });
+}
+
+export function * fetchRoomAreasFlow() {
+
+  try {
+    const data = yield call(fetchRoomAreas);
+    yield put(AssetsActions.roomAreasSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchRoomAreasFlow() {
-    yield * takeLatest(AssetsTypes.ROOM_AREAS_FETCH, fetchRoomAreasFlow)
-  }
+export function * watchRoomAreasFlow(state) {
+  yield * takeLatest(AssetsTypes.ROOM_AREAS_FETCH, fetchRoomAreasFlow);
+}
 
-  // Hotel Inventory Withdrawals
-  function * fetchInventoryWithdrawals() {
-    const { auth: { token } } = yield select()
-    const today = moment().format('YYYY-MM-DD')
-    const getUrl = `${INVENTORY_WITHDRAWALS_API}=${today}`
+// Hotel Inventory Withdrawals
+export function * fetchInventoryWithdrawals() {
+  const { auth: { hotelId, token } } = yield select();
+  const today = moment().format('YYYY-MM-DD');
+  const getUrl = `${INVENTORY_WITHDRAWALS_API}=${today}`;
 
-    return yield call(request, getUrl, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-  }
-
-  function * fetchInventoryWithdrawalsFlow() {
-    try {
-      const data = yield call(fetchInventoryWithdrawals)
-      yield put(AssetsActions.inventoryWithdrawalSuccess(data))
-    } catch (e) {
-      console.log(e)
+  return yield call(request, getUrl, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
-  }
+  });
+}
 
-  function * watchInventoryWithdrawalsFlow() {
-    yield * takeLatest(AssetsTypes.INVENTORY_WITHDRAWAL_FETCH, fetchInventoryWithdrawalsFlow)
-  }
+export function * fetchInventoryWithdrawalsFlow() {
 
-  return {
-    watchInventoryWithdrawalsFlow,
-    watchRoomAreasFlow,
-    watchCustomActionsFlow,
-    watchAssetRoomsFlow,
-    watchVirtualAssetsFlow,
-    watchAssetsFlow
+  try {
+    const data = yield call(fetchInventoryWithdrawals);
+    yield put(AssetsActions.inventoryWithdrawalSuccess(data))
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
+
+export function * watchInventoryWithdrawalsFlow(state) {
+  yield * takeLatest(AssetsTypes.INVENTORY_WITHDRAWAL_FETCH, fetchInventoryWithdrawalsFlow);
 }

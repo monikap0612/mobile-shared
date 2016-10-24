@@ -1,89 +1,125 @@
-import { takeEvery, takeLatest } from 'redux-saga'
-import { put, call } from 'redux-saga/effects'
+import { takeEvery, delay, take, takeLatest } from 'redux-saga';
+import { put, call, select } from 'redux-saga/effects';
 
-import AuthTypes from '../constants/auth'
-import AuthActions from '../actions/auth'
-import RoomsActions from '../actions/rooms'
-import AssetsActions from '../actions/assets'
-import UpdateActions from '../actions/updates'
+import AuthTypes from '../constants/auth';
+import AuthActions from '../actions/auth';
+import RoomsActions from '../actions/rooms';
+import AssetsActions from '../actions/assets';
+import GlitchesActions from '../actions/glitches';
+import UpdateActions from '../actions/updates';
 
-import request from '../utils/request'
+import request from '../utils/request';
+import API_URL from '../api';
 
+// import {
+//   hotelRequest,
+//   hotelSuccess,
+//   hotelFailure
+// } from '../actions/auth';
 
-export default function ({ apiUrl }) {
-  const MOBILE_USERS_API = `${apiUrl}/mobile_users`
-  const AUTH_API = `${apiUrl}/session`
-  // Logout
-  function * logoutFlow() {
-    try {
-      yield put(AuthActions.hotelReset())
-      yield put(RoomsActions.resetRooms())
-      yield put(AssetsActions.resetAssets())
-      // yield put(GlitchesActions.resetGlitches());
-      yield put(UpdateActions.resetUpdates())
-    } catch (e) {
-      console.log(e)
-    }
+const MOBILE_USERS_API = `${API_URL}/mobile_users`;
+const AUTH_API = `${API_URL}/session`;
+const USER_API = `${API_URL}/users`;
+const HOTEL_API = `${API_URL}/hotel`;
+
+// Logout
+export function * logoutFlow({ hotel }) {
+  try {
+    yield put(AuthActions.hotelReset());
+    yield put(RoomsActions.resetRooms());
+    yield put(AssetsActions.resetAssets());
+    // yield put(GlitchesActions.resetGlitches());
+    yield put(UpdateActions.resetUpdates());
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  function * watchLogout() {
-    yield * takeLatest(AuthTypes.LOGOUT, logoutFlow)
+export function * watchLogout() {
+  yield * takeLatest(AuthTypes.LOGOUT, logoutFlow);
+}
+
+// HOTEL SUBMISSION
+export function * submitHotelLogin(hotel) {
+  const url = `${MOBILE_USERS_API}?hotelUsername=${hotel.toLowerCase()}&userType=room_runner`;
+  return yield call(request, url, { method: 'GET' });
+}
+
+export function * submitHotelFlow({ hotel }) {
+  try {
+    const data = yield call(submitHotelLogin, hotel);
+    yield put(AuthActions.hotelSuccess(data));
+  } catch (e) {
+    console.log(e);
+  } finally {
+
   }
+}
 
-  // HOTEL SUBMISSION
-  function * submitHotelLogin(hotel) {
-    const url = `${MOBILE_USERS_API}?hotelUsername=${hotel.toLowerCase()}&userType=attendant`
-    return yield call(request, url, { method: 'GET' })
-  }
+export function * watchHotelFlow() {
+  yield * takeEvery(AuthTypes.HOTEL_REQUEST, submitHotelFlow);
+}
 
-  function * submitHotelFlow({ hotel }) {
-    try {
-      const data = yield call(submitHotelLogin, hotel)
-      yield put(AuthActions.hotelSuccess(data))
-    } catch (e) {
-      console.log(e)
-    }
-  }
+// USER SUBMISSION
+export function * submitUserLogin({ hotelUsername, username, password }) {
+  console.log(hotelUsername, username, password);
 
-  function * watchHotelFlow() {
-    yield * takeEvery(AuthTypes.HOTEL_REQUEST, submitHotelFlow)
-  }
-
-  // USER SUBMISSION
-  function * submitUserLogin({ hotelUsername, username, password }) {
-    console.log(hotelUsername, username, password)
-
-    return yield call(request, AUTH_API, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        hotel: hotelUsername.toLowerCase(),
-        username: username.toLowerCase(),
-        password
-      })
+  return yield call(request, AUTH_API, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      hotel: hotelUsername.toLowerCase(),
+      username: username.toLowerCase(),
+      password
     })
-  }
+  });
+}
 
-  function * submitUserFlow({ hotelUsername, username, password }) {
-    // console.log(hotelUsername, username, password);
-    try {
-      const data = yield call(submitUserLogin, { hotelUsername, username, password })
-      yield put(AuthActions.userSuccess(data))
-    } catch (e) {
-      console.log(e)
+export function * submitUserFlow({ hotelUsername, username, password }) {
+  // console.log(hotelUsername, username, password);
+  try {
+    const data = yield call(submitUserLogin, { hotelUsername, username, password });
+    yield put(AuthActions.userSuccess(data));
+  } catch (e) {
+    console.log(e);
+  } finally {
+
+  }
+}
+
+export function * watchUserFlow() {
+  yield * takeEvery(AuthTypes.USER_REQUEST, submitUserFlow)
+}
+
+// HOTEL FETCH
+
+export function * fetchHotel() {
+  const { auth: { hotelId, token } } = yield select();
+
+  return yield call(request, `${HOTEL_API}/${hotelId}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
-  }
+  });
+}
 
-  function * watchUserFlow() {
-    yield * takeEvery(AuthTypes.USER_REQUEST, submitUserFlow)
-  }
+export function * fetchHotelFlow() {
+  try {
+    const data = yield call(fetchHotel, null);
+    yield put(AuthActions.hotelFetchSuccess(data));
+  } catch (e) {
+    console.log(e);
+  } finally {
 
-  return {
-    watchUserFlow,
-    watchHotelFlow,
-    watchLogout
   }
+}
+
+export function * watchFetchHotelFlow() {
+  yield * takeEvery(AuthTypes.HOTEL_FETCH, fetchHotelFlow)
 }

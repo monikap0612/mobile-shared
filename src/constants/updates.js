@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   UPDATES_RESET
@@ -9,6 +9,7 @@ export default createTypes(`
   INVENTORY_RESTOCK
 
   ROOM_CLEAN_START
+  ROOM_CLEAN_RESTART
   ROOM_CLEAN_PAUSE
   ROOM_CLEAN_UNPAUSE
   ROOM_CLEAN_FINISH
@@ -32,4 +33,4 @@ export default createTypes(`
 
   TASK_CREATE
   TASK_UPDATE
-`)
+`);

@@ -1,4 +1,4 @@
-import GlitchesTypes from '../constants/glitches'
+import GlitchesTypes from '../constants/glitches';
 
 export function glitchesReset() {
   return {
