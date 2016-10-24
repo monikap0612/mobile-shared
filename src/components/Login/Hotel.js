@@ -15,7 +15,7 @@ import { opacityWhite, transparent } from '../../styles/colors';
 
 import styles from './styles';
 
-export const HotelLogin = ({ submitHotelLogin, handleSubmit}) => (
+export const HotelLogin = ({ submitHotelLogin, handleSubmit, appName }) => (
   <View style={styles.container}>
     <View style={styles.hotelContainer}>
       <View style={styles.logoContainer}>
@@ -23,7 +23,7 @@ export const HotelLogin = ({ submitHotelLogin, handleSubmit}) => (
       </View>
       <View style={styles.hotelInfoContainer}>
         <Text style={[styles.text, styles.header]}>
-          RoomChecking: Runner
+          RoomChecking: { appName }
         </Text>
         <Text style={[styles.text, styles.subheader]}>
           Please enter in your hotel

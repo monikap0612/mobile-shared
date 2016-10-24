@@ -20,7 +20,8 @@ class Login extends Component {
   render() {
     const {
       isActiveHotel, hotelName, hotelImage, hotelUsers,
-      hotelUsername, submitUserLogin, submitHotelLogin, hotelReset
+      hotelUsername, submitUserLogin, submitHotelLogin,
+      hotelReset, appName
     } = this.props;
     const hotel = {
       name: hotelName,
@@ -32,7 +33,8 @@ class Login extends Component {
       hotel,
       submitUserLogin: submitUserLogin(hotelUsername),
       submitHotelLogin,
-      hotelReset
+      hotelReset,
+      appName
     }
     return <LoginForm {...loginFormProps} />
   }

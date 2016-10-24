@@ -10,7 +10,7 @@ import UpdateActions from '../actions/updates';
 
 import request from '../utils/request';
 
-export default function({ apiUrl }) { 
+export default function({ apiUrl, userType }) { 
   const MOBILE_USERS_API = `${apiUrl}/mobile_users`;
   const AUTH_API = `${apiUrl}/session`;
   const USER_API = `${apiUrl}/users`;
@@ -37,7 +37,7 @@ export default function({ apiUrl }) {
 
   // HOTEL SUBMISSION
   function * submitHotelLogin(hotel) {
-    const url = `${MOBILE_USERS_API}?hotelUsername=${hotel.toLowerCase()}&userType=room_runner`;
+    const url = `${MOBILE_USERS_API}?hotelUsername=${hotel.toLowerCase()}&userType=${userType}`;
     return yield call(request, url, { method: 'GET' });
   }
 
