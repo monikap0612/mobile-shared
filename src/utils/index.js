@@ -5,5 +5,17 @@ import checkEqual from './check-equal'
 import immutableTransform from './immutable-transform'
 import request from './request'
 import secsToTime from './secs-to-time'
+import digestAssignment from './digest-assignment'
+import socket from './socket'
 
-export { calendar, checkEqual, immutableTransform, rehydration, request, secsToTime, sorting }
+export {
+  calendar,
+  checkEqual,
+  immutableTransform,
+  rehydration,
+  request,
+  secsToTime,
+  sorting,
+  digestAssignment,
+  socket
+}

@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   GLITCHES_RESET
@@ -15,4 +15,4 @@ export default createTypes(`
   GLITCH_HANDOVER
   GLITCH_EMAIL
   GLITCH_CLOSE
-`)
+`);

@@ -1,4 +1,4 @@
-import UpdatesTypes from '../constants/updates'
+import UpdatesTypes from '../constants/updates';
 
 export function adjustInventory({ assetRoomId, roomId }) {
   return {
@@ -34,6 +34,14 @@ export function restockInventory({ assetRoomId, id }) {
 export function roomCleanStart(roomId) {
   return {
     type: UpdatesTypes.ROOM_CLEAN_START,
+    roomId,
+    status: 'cleaning'
+  }
+}
+
+export function roomCleanRestart(roomId) {
+  return {
+    type: UpdatesTypes.ROOM_CLEAN_RESTART,
     roomId,
     status: 'cleaning'
   }
@@ -192,6 +200,7 @@ export default {
   flushInventory,
   restockInventory,
   roomCleanStart,
+  roomCleanRestart,
   roomCleanPause,
   roomCleanUnpause,
   roomCleanFinish,

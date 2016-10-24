@@ -1,4 +1,4 @@
-import UsersTypes from '../constants/users'
+import UsersTypes from '../constants/users';
 
 export function usersFetch() {
   return {
@@ -13,7 +13,22 @@ export function usersSuccess({ users }) {
   }
 }
 
+export function groupsFetch() {
+  return {
+    type: UsersTypes.GROUPS_FETCH
+  }
+}
+
+export function groupsSuccess({ groups }) {
+  return {
+    type: UsersTypes.GROUPS_SUCCESS,
+    groups
+  }
+}
+
 export default {
   usersFetch,
-  usersSuccess
+  usersSuccess,
+  groupsFetch,
+  groupsSuccess
 }

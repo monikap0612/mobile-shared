@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   ASSETS_RESET
@@ -26,4 +26,4 @@ export default createTypes(`
   INVENTORY_WITHDRAWAL_FETCH
   INVENTORY_WITHDRAWAL_SUCCESS
   INVENTORY_WITHDRAWAL_FAILURE
-`)
+`);

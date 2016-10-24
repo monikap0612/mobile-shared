@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   HOTEL_REQUEST
@@ -9,6 +9,10 @@ export default createTypes(`
   USER_SUCCESS
   USER_FAILURE
 
+  HOTEL_FETCH
+  HOTEL_FETCH_SUCCESS
+  HOTEL_FETCH_FAILURE
+
   HOTEL_RESET
   LOGOUT
-`)
+`);

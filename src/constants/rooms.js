@@ -1,4 +1,4 @@
-import { createTypes } from 'reduxsauce'
+import { createTypes } from 'reduxsauce';
 
 export default createTypes(`
   RESET_ROOMS
@@ -30,6 +30,10 @@ export default createTypes(`
   PLANNINGS_NIGHT_SUCCESS
   PLANNINGS_NIGHT_FAILURE
 
+  PLANNINGS_RUNNER_FETCH
+  PLANNINGS_RUNNER_SUCCESS
+  PLANNINGS_RUNNER_FAILURE
+
   CALENDAR_FETCH
   CALENDAR_SUCCESS
   CALENDAR_FAILURE
@@ -45,4 +49,6 @@ export default createTypes(`
   TASKS_FETCH
   TASKS_SUCCESS
   TASKS_FAILURE
-`)
+
+  TASK_UPDATE_SUCCESS
+`);
