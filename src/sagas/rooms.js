@@ -8,17 +8,17 @@ import BackendActions from '../actions/backend';
 import request from '../utils/request';
 
 export default function({ apiUrl }) {
-  const ROOMS_API = `${API_URL}/rooms`;
-  const FLOORS_API = `${API_URL}/floors`;
-  const ROOM_STATUSES_API = `${API_URL}/room_statuses`;
-  const ROOM_HOUSEKEEPINGS_API = `${API_URL}/room_housekeepings`;
-  const PLANNINGS_API = `${API_URL}/attendant_plannings`;
-  const PLANNINGS_NIGHT_API = `${API_URL}/attendant_planning_nights`;
-  const PLANNINGS_RUNNER_API = `${API_URL}/runner_plannings`;
-  const CALENDAR_API = `${API_URL}/calendar`;
-  const ROOM_NOTES_API = `${API_URL}/room_notes`;
-  const CATALOGS_API = `${API_URL}/catalog_by_hotel`;
-  const TASKS_API = `${API_URL}/tasks`;
+  const ROOMS_API = `${apiUrl}/rooms`;
+  const FLOORS_API = `${apiUrl}/floors`;
+  const ROOM_STATUSES_API = `${apiUrl}/room_statuses`;
+  const ROOM_HOUSEKEEPINGS_API = `${apiUrl}/room_housekeepings`;
+  const PLANNINGS_API = `${apiUrl}/attendant_plannings`;
+  const PLANNINGS_NIGHT_API = `${apiUrl}/attendant_planning_nights`;
+  const PLANNINGS_RUNNER_API = `${apiUrl}/runner_plannings`;
+  const CALENDAR_API = `${apiUrl}/calendar`;
+  const ROOM_NOTES_API = `${apiUrl}/room_notes`;
+  const CATALOGS_API = `${apiUrl}/catalog_by_hotel`;
+  const TASKS_API = `${apiUrl}/tasks`;
 
   // Hotel Rooms
   function * fetchRooms() {

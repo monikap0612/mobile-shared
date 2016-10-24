@@ -14,7 +14,8 @@
     "check": "npm run check:src",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build": "npm run build:commonjs",
-    "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax lib/ --kill --print"
+    "prepublish": "npm run clean && npm run check:src && npm run build && check-es3-syntax lib/ --kill --print",
+    "push": "npm run build && git add . && git commit -m 'Build sources'"
   },
   "author": "",
   "license": "MIT",
