@@ -92,7 +92,7 @@ const getComputedRoomsIndex = (hotelRooms) => {
   return keyBy(hotelRooms, '_id');
 }
 
-getAvailableFloors = (hotelRooms, hotelFloors) => {
+const getAvailableFloors = (hotelRooms, hotelFloors) => {
   if (!hotelRooms || !hotelRooms.length) {
     return [];
   }
