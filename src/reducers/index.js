@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 import rehydration from './rehydration';
 import auth from './auth';
 import overlay from './overlay';
@@ -9,9 +7,8 @@ import assets from './assets';
 import users from './users';
 import updates from './updates';
 import glitches from './glitches';
-// import backend from './backend';
 
-export default combineReducers({
+export default {
   rehydration,
   auth,
   overlay,
@@ -21,5 +18,4 @@ export default combineReducers({
   users,
   updates,
   glitches,
-  // backend
-});
+};
