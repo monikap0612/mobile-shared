@@ -59,47 +59,47 @@ const getComputedRooms = (
   indexPlanning,
   groupedNotes,
   groupedTasks,
-  isPlanned
+  isPlanned,
+  roomsUpdates,
+  userId
 ) => {
   if (!hotelRooms || !hotelRooms.length) {
     return [];
   }
 
-  return flow(
-    fpMap(hotelRooms, room => {
-      const roomId = get(room, '_id');
-      const roomPlanning = get(indexPlannings, roomId, {});
+  const mappedRooms = map(hotelRooms, room => {
+    const roomId = get(room, '_id');
+    const roomPlanning = get(indexPlanning, roomId, {});
 
-      // if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
-      //   return null;
-      // }
+    // if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
+    //   return null;
+    // }
 
-      const floorId = get(room, 'floor');
-      const roomStatusId = get(room, 'roomStatus');
-      const roomHousekeepingId = get(room, 'roomHousekeeping');
+    const floorId = get(room, 'floor');
+    const roomStatusId = get(room, 'roomStatus');
+    const roomHousekeepingId = get(room, 'roomHousekeeping');
 
-      const roomCalendar = get(groupedCalendar, roomId, []);
-      const roomNotes = get(groupedNotes, roomId, []);
-      const roomTasks = get(groupedTasks, roomId, []);
-      const guests = roomCalendar && !isEmpty(roomCalendar) && calculateGuest(roomCalendar) || null;
-  		const guestStatus = get(roomPlanning, 'guest_status') || calculateGuestCode(roomCalendar, guests);
+    const roomCalendar = get(groupedCalendar, roomId, []);
+    const roomNotes = get(groupedNotes, roomId, []);
+    const roomTasks = get(groupedTasks, roomId, []);
+    const guests = roomCalendar && !isEmpty(roomCalendar) && calculateGuest(roomCalendar) || null;
+    const guestStatus = get(roomPlanning, 'guest_status') || calculateGuestCode(roomCalendar, guests);
 
-      return extend({}, room, {
-        floor: get(indexFloors, floorId, {}),
-        roomStatus: get(indexRoomStatuses, roomStatusId, {}),
-        roomHousekeeping: get(indexRoomHousekeepings, roomHousekeepingId, {}),
-        roomPlanning,
-        roomCalendar,
-        roomNotes,
-        roomTasks,
-        guests,
-        guestStatus,
-        update: get(roomsUpdates, roomId, null)
-      });
-    }),
-    fpFilter(room => !!room),
-    fpSortBy('name')
-  )(hotelRooms);
+    return extend({}, room, {
+      floor: get(indexFloors, floorId, {}),
+      roomStatus: get(indexRoomStatuses, roomStatusId, {}),
+      roomHousekeeping: get(indexRoomHousekeepings, roomHousekeepingId, {}),
+      roomPlanning,
+      roomCalendar,
+      roomNotes,
+      roomTasks,
+      guests,
+      guestStatus,
+      update: get(roomsUpdates, roomId, null)
+    });
+  }).filter(room => room);
+
+  return sortBy(mappedRooms, 'name');
 }
 
 const getComputedRoomsIndex = (hotelRooms) => {
@@ -191,6 +191,7 @@ export const computedHotelRooms = createSelector(
     computedIndexPlanning,
     computedGroupNotes,
     computedGroupTasks,
+    computedIsPlanned,
     roomsUpdatesSelector,
     userIdSelector
   ],
