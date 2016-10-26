@@ -4,24 +4,34 @@ import { keyBy, groupBy, map, find, filter, sortBy, includes } from 'lodash/coll
 import { uniq, flatten } from 'lodash/array';
 import { get, extend } from 'lodash/object';
 import { isEmpty } from 'lodash/lang';
-import { map as fpMap, uniq as fpUniq, fpUniqWith, flow, sortBy as fpSortBy } from 'lodash/fp';
+import { map as fpMap, uniq as fpUniq, fpUniqWith, flow, sortBy as fpSortBy, filter as fpFilter } from 'lodash/fp';
 
 import { calculateGuest, calculateGuestCode } from '../utils/calendar';
 import { roomsSorting, floorsSorting } from '../utils/sorting';
 
-const userIdSelector = state => state.auth.userId;
-const roomsSelector = state => state.rooms.hotelRooms;
-const floorsSelector = state => state.rooms.hotelFloors;
-const roomStatusesSelector = state => state.rooms.hotelRoomStatuses;
-const roomHousekeepingsSelector = state => state.rooms.hotelRoomHousekeepings;
-const calendarSelector = state => state.rooms.hotelCalendar;
-// const planningsSelector = state => state.rooms.hotelPlannings;
-const planningsSelector = state => state.rooms.hotelPlanningsRunner;
-const roomNotesSelector = state => state.rooms.hotelRoomNotes;
-const catalogSelector = state => state.rooms.hotelCatalogs;
-const tasksSelector = state => state.rooms.hotelTasks;
-const activeRoomSelector = state => state.rooms.activeRoom;
-const roomsUpdatesSelector = state => state.updates.rooms;
+export const userIdSelector = state => state.auth.userId;
+export const roomsSelector = state => state.rooms.hotelRooms;
+export const floorsSelector = state => state.rooms.hotelFloors;
+export const roomStatusesSelector = state => state.rooms.hotelRoomStatuses;
+export const roomHousekeepingsSelector = state => state.rooms.hotelRoomHousekeepings;
+export const calendarSelector = state => state.rooms.hotelCalendar;
+export const planningsSelector = state => state.rooms.hotelPlannings;
+export const planningsNightSelector = state => state.rooms.hotelPlanningsNight;
+export const planningsRunnerSelector = state => state.rooms.hotelPlanningsRunner;
+export const roomNotesSelector = state => state.rooms.hotelRoomNotes;
+export const catalogSelector = state => state.rooms.hotelCatalogs;
+export const tasksSelector = state => state.rooms.hotelTasks;
+export const activeRoomSelector = state => state.rooms.activeRoom;
+export const roomsUpdatesSelector = state => state.updates.rooms;
+
+export const getIndexFloors = (hotelFloors) => keyBy(hotelFloors || [], '_id');
+export const getIndexRoomStatuses = (hotelRoomStatuses) => keyBy(hotelRoomStatuses || [], '_id');
+export const getIndexRoomHousekeepings = (hotelRoomHousekeepings) => keyBy(hotelRoomHousekeepings || [], '_id');
+export const getGroupCalendar = (hotelCalendar) => groupBy(hotelCalendar || [], 'room_id');
+export const getIndexPlanning = (hotelPlannings) => keyBy(hotelPlannings || [], 'room_id');
+export const getGroupNotes = (hotelRoomNotes) => keyBy(hotelRoomNotes || [], 'room_id');
+export const getGroupTasks = (hotelTasks) => groupBy(hotelTasks, 'meta.room_id');
+export const getIsPlanned = (hotelPlannings) => filter(hotelPlannings, p => get(p, 'planning_user_id.length', 0) > 0).length > 0;
 
 const getUserTasks = (hotelTasks, userId) => {
   if (!hotelTasks || !hotelTasks.length) {
@@ -40,52 +50,56 @@ const getUserTasks = (hotelTasks, userId) => {
   });
 }
 
-const getComputedRooms = (hotelRooms, hotelFloors, hotelRoomStatuses, hotelRoomHousekeepings, hotelCalendar, hotelPlannings, hotelRoomNotes, hotelTasks, roomsUpdates, userId) => {
+const getComputedRooms = (
+  hotelRooms,
+  indexFloors,
+  indexRoomStatuses,
+  indexRoomHousekeepings,
+  groupedCalendar,
+  indexPlanning,
+  groupedNotes,
+  groupedTasks,
+  isPlanned
+) => {
   if (!hotelRooms || !hotelRooms.length) {
     return [];
   }
 
-  const indexFloors = keyBy(hotelFloors, '_id');
-  const indexRoomStatuses = keyBy(hotelRoomStatuses, '_id');
-  const indexRoomHousekeepings = keyBy(hotelRoomHousekeepings, '_id');
-  const groupedCalendar = groupBy(hotelCalendar, 'room_id');
-  const indexedPlannings = keyBy(hotelPlannings, 'room_id');
-  const groupedNotes = groupBy(hotelRoomNotes, 'room_id');
-  const groupedTasks = groupBy(hotelTasks, 'meta.room_id');
-  const isPlanned = filter(hotelPlannings, p => get(p, 'planning_user_id.length', 0) > 0).length > 0;
+  return flow(
+    fpMap(hotelRooms, room => {
+      const roomId = get(room, '_id');
+      const roomPlanning = get(indexPlannings, roomId, {});
 
-  const computedHotelRooms = map(hotelRooms, room => {
-    const roomId = get(room, '_id');
-    const floorId = get(room, 'floor');
-    const roomStatusId = get(room, 'roomStatus');
-    const roomHousekeepingId = get(room, 'roomHousekeeping');
+      // if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
+      //   return null;
+      // }
 
-    const roomCalendar = get(groupedCalendar, roomId, []);
-    const roomPlanning = get(indexedPlannings, roomId, {});
-    if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
-      return null;
-    }
+      const floorId = get(room, 'floor');
+      const roomStatusId = get(room, 'roomStatus');
+      const roomHousekeepingId = get(room, 'roomHousekeeping');
 
-    const roomNotes = get(groupedNotes, roomId, []);
-    const roomTasks = get(groupedTasks, roomId, []);
-    const guests = roomCalendar && !isEmpty(roomCalendar) && calculateGuest(roomCalendar) || null;
-		const guestStatus = get(roomPlanning, 'guest_status') || calculateGuestCode(roomCalendar, guests);
+      const roomCalendar = get(groupedCalendar, roomId, []);
+      const roomNotes = get(groupedNotes, roomId, []);
+      const roomTasks = get(groupedTasks, roomId, []);
+      const guests = roomCalendar && !isEmpty(roomCalendar) && calculateGuest(roomCalendar) || null;
+  		const guestStatus = get(roomPlanning, 'guest_status') || calculateGuestCode(roomCalendar, guests);
 
-    return extend({}, room, {
-      floor: get(indexFloors, floorId, {}),
-      roomStatus: get(indexRoomStatuses, roomStatusId, {}),
-      roomHousekeeping: get(indexRoomHousekeepings, roomHousekeepingId, {}),
-      roomPlanning,
-      roomCalendar,
-      roomNotes,
-      roomTasks,
-      guests,
-      guestStatus,
-      update: get(roomsUpdates, roomId, null)
-    });
-  }).filter(x => !!x);
-
-  return sortBy(computedHotelRooms, 'name');
+      return extend({}, room, {
+        floor: get(indexFloors, floorId, {}),
+        roomStatus: get(indexRoomStatuses, roomStatusId, {}),
+        roomHousekeeping: get(indexRoomHousekeepings, roomHousekeepingId, {}),
+        roomPlanning,
+        roomCalendar,
+        roomNotes,
+        roomTasks,
+        guests,
+        guestStatus,
+        update: get(roomsUpdates, roomId, null)
+      });
+    }),
+    fpFilter(room => !!room),
+    fpSortBy('name')
+  )(hotelRooms);
 }
 
 const getComputedRoomsIndex = (hotelRooms) => {
@@ -147,13 +161,39 @@ const getPopupTasks = (hotelTasks, userId) => {
   return filter(hotelTasks, task => !get(task, 'is_claimed') && !includes(get(task, 'assigned.rejected_ids', []), userId));
 }
 
+export const computedIndexFloors = createSelector([floorsSelector], getIndexFloors);
+export const computedIndexRoomStatuses = createSelector([roomStatusesSelector], getIndexRoomStatuses);
+export const computedIndexRoomHousekeepings = createSelector([roomHousekeepingsSelector], getIndexRoomHousekeepings);
+export const computedGroupCalendar = createSelector([calendarSelector], getGroupCalendar);
+export const computedGroupNotes = createSelector([roomNotesSelector], getGroupNotes);
+export const computedGroupTasks = createSelector([tasksSelector], getGroupTasks);
+
+export const computedIndexPlanning = createSelector([planningsSelector], getIndexPlanning);
+export const computedIndexRunnerPlanning = createSelector([planningsRunnerSelector], getIndexPlanning);
+export const computedIndexNightPlanning = createSelector([planningsNightSelector], getIndexPlanning);
+
+export const computedIsPlanned = createSelector([planningsSelector], getIsPlanned);
+export const computedIsRunnerPlanned = createSelector([planningsRunnerSelector], getIsPlanned);
+export const computedIsNightPlanned = createSelector([planningsNightSelector], getIsPlanned);
+
 export const computedUserTasks = createSelector(
   [tasksSelector, userIdSelector],
   getUserTasks
 );
 
 export const computedHotelRooms = createSelector(
-  [roomsSelector, floorsSelector, roomStatusesSelector, roomHousekeepingsSelector, calendarSelector, planningsSelector, roomNotesSelector, computedUserTasks, roomsUpdatesSelector, userIdSelector],
+  [
+    roomsSelector,
+    computedIndexFloors,
+    computedIndexRoomStatuses,
+    computedIndexRoomHousekeepings,
+    computedGroupCalendar,
+    computedIndexPlanning,
+    computedGroupNotes,
+    computedGroupTasks,
+    roomsUpdatesSelector,
+    userIdSelector
+  ],
   getComputedRooms
 );
 
