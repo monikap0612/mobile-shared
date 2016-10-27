@@ -71,9 +71,9 @@ const getComputedRooms = (
     const roomId = get(room, '_id');
     const roomPlanning = get(indexPlanning, roomId, {});
 
-    // if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
-    //   return null;
-    // }
+    if (isPlanned && get(roomPlanning, 'planning_user_id') !== userId) {
+      return null;
+    }
 
     const floorId = get(room, 'floor');
     const roomStatusId = get(room, 'roomStatus');
