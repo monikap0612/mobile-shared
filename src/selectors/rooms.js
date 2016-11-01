@@ -33,7 +33,7 @@ export const getGroupNotes = (hotelRoomNotes) => keyBy(hotelRoomNotes || [], 'ro
 export const getGroupTasks = (hotelTasks) => groupBy(hotelTasks, 'meta.room_id');
 export const getIsPlanned = (hotelPlannings) => filter(hotelPlannings, p => get(p, 'planning_user_id.length', 0) > 0).length > 0;
 
-const getUserTasks = (hotelTasks, userId) => {
+export const getUserTasks = (hotelTasks, userId) => {
   if (!hotelTasks || !hotelTasks.length) {
     return [];
   }
@@ -50,7 +50,7 @@ const getUserTasks = (hotelTasks, userId) => {
   });
 }
 
-const getComputedRooms = (
+export const getComputedRooms = (
   hotelRooms,
   indexFloors,
   indexRoomStatuses,
@@ -102,11 +102,11 @@ const getComputedRooms = (
   return sortBy(mappedRooms, 'name');
 }
 
-const getComputedRoomsIndex = (hotelRooms) => {
+export const getComputedRoomsIndex = (hotelRooms) => {
   return keyBy(hotelRooms, '_id');
 }
 
-const getAvailableFloors = (hotelRooms, hotelFloors) => {
+export const getAvailableFloors = (hotelRooms, hotelFloors) => {
   if (!hotelRooms || !hotelRooms.length) {
     return [];
   }
@@ -141,11 +141,11 @@ const getAvailableFloors = (hotelRooms, hotelFloors) => {
   )(hotelRooms);
 }
 
-const getActiveRoom = (hotelRoomsIndex, activeRoom) => {
+export const getActiveRoom = (hotelRoomsIndex, activeRoom) => {
   return get(hotelRoomsIndex, activeRoom, null);
 }
 
-const getCatalogByActiveRoom = (hotelCatalog, activeRoom) => {
+export const getCatalogByActiveRoom = (hotelCatalog, activeRoom) => {
   if (!hotelCatalog || !hotelCatalog.length) {
     return [];
   }
@@ -153,7 +153,7 @@ const getCatalogByActiveRoom = (hotelCatalog, activeRoom) => {
   return filter(hotelCatalog, { roomId: activeRoom });
 }
 
-const getPopupTasks = (hotelTasks, userId) => {
+export const getPopupTasks = (hotelTasks, userId) => {
   if (!hotelTasks || !hotelTasks.length) {
     return [];
   }

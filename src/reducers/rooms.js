@@ -20,8 +20,8 @@ export const INITIAL_STATE = Immutable({
 });
 
 const ACTION_HANDLERS = {
-  [RoomsTypes.RESET_ROOMS]: (state, { roomId }) => {
-    return INITIAL_STATE
+  [RoomsTypes.RESET_ROOMS]: (state) => {
+    return INITIAL_STATE;
   },
   [RoomsTypes.ROOM_ACTIVATE]: (state, { roomId }) => {
     return state.set('activeRoom', roomId);
