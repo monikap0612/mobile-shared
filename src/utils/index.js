@@ -7,7 +7,6 @@ import request from './request'
 import secsToTime from './secs-to-time'
 import digestAssignment from './digest-assignment'
 import socket from './socket'
-import * as i18n from './i18n'
 
 export {
   calendar,
@@ -18,6 +17,5 @@ export {
   secsToTime,
   sorting,
   digestAssignment,
-  socket,
-  i18n
+  socket
 }
