@@ -76,6 +76,7 @@
   "files": [
     "lib",
     "src",
+    "translations",
     "sagas.js",
     "utils.js",
     "actions.js",
