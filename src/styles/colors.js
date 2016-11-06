@@ -33,9 +33,13 @@ export const blue200 = buildColor('#83CEFB')
 export const blue300 = buildColor('#5EB9F5')
 export const blue500 = buildColor('#35A6F2')
 
-export const red = buildColor('#D76D76');
+export const blue = buildColor('#198CFF');
+export const lightblue = buildColor('#52C0F9');
+export const darkblue = buildColor('#416486');
 
-export const green = buildColor('#24C776');
+export const red = buildColor('#C93C46');
+
+export const green = buildColor('#3CC86B');
 
 export const lightgray = buildColor('#E6E6E6');
 export const darkgray = buildColor('#9A9A9A');
