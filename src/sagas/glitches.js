@@ -4,10 +4,10 @@ import { put, call, select } from 'redux-saga/effects';
 import GlitchesTypes from '../constants/glitches';
 import GlitchesActions from '../actions/glitches';
 
-import request from '../utils/request';
+import request from '../utils/request'
 
 export default function({ apiUrl }) {
-  
+
   const GLITCHES_API = `${apiUrl}/glitches`;
 
   // Hotel Glitches
@@ -265,4 +265,3 @@ export default function({ apiUrl }) {
     watchCloseGlitchFlow
   }
 }
-

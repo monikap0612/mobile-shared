@@ -23,6 +23,7 @@ export const catalogSelector = state => state.rooms.hotelCatalogs;
 export const tasksSelector = state => state.rooms.hotelTasks;
 export const activeRoomSelector = state => state.rooms.activeRoom;
 export const roomsUpdatesSelector = state => state.updates.rooms;
+export const usersSelector = state => state.users.users;
 
 export const getIndexFloors = (hotelFloors) => keyBy(hotelFloors || [], '_id');
 export const getIndexRoomStatuses = (hotelRoomStatuses) => keyBy(hotelRoomStatuses || [], '_id');
@@ -32,6 +33,7 @@ export const getIndexPlanning = (hotelPlannings) => keyBy(hotelPlannings || [], 
 export const getGroupNotes = (hotelRoomNotes) => keyBy(hotelRoomNotes || [], 'room_id');
 export const getGroupTasks = (hotelTasks) => groupBy(hotelTasks, 'meta.room_id');
 export const getIsPlanned = (hotelPlannings) => filter(hotelPlannings, p => get(p, 'planning_user_id.length', 0) > 0).length > 0;
+export const getIndexUsers = (hotelUsers) => keyBy(hotelUsers || [], '_id');
 
 export const getUserTasks = (hotelTasks, userId) => {
   if (!hotelTasks || !hotelTasks.length) {
@@ -167,6 +169,7 @@ export const computedIndexRoomHousekeepings = createSelector([roomHousekeepingsS
 export const computedGroupCalendar = createSelector([calendarSelector], getGroupCalendar);
 export const computedGroupNotes = createSelector([roomNotesSelector], getGroupNotes);
 export const computedGroupTasks = createSelector([tasksSelector], getGroupTasks);
+export const computedIndexUser = createSelector([usersSelector], getIndexUsers);
 
 export const computedIndexPlanning = createSelector([planningsSelector], getIndexPlanning);
 export const computedIndexRunnerPlanning = createSelector([planningsRunnerSelector], getIndexPlanning);
