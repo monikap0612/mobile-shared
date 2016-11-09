@@ -8,6 +8,8 @@ import secsToTime from './secs-to-time'
 import digestAssignment from './digest-assignment'
 import socket from './socket'
 import * as i18n from './i18n'
+import * as hocHelpers from './hoc-helpers';
+import * as platform from './platform';
 
 export {
   calendar,
@@ -19,5 +21,7 @@ export {
   sorting,
   digestAssignment,
   socket,
-  i18n
+  i18n,
+  hocHelpers,
+  platform,
 }
