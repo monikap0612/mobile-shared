@@ -1,11 +1,11 @@
-import en from './en';
-import fr from './fr';
-import ru from './ru';
-import ro from './ro';
-import he from './he';
-import es from './es';
-import it from './it';
-import de from './de';
+import en from '../../translations/en.json';
+import fr from '../../translations/fr.json';
+import ru from '../../translations/ru.json';
+import ro from '../../translations/ro.json';
+import he from '../../translations/he.json';
+import es from '../../translations/es.json';
+import it from '../../translations/it.json';
+import de from '../../translations/de.json';
 
 export const translations = {
   en,

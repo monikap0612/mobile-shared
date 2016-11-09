@@ -76,11 +76,26 @@
   "files": [
     "lib",
     "src",
+    "translations",
+    "android",
+    "ios",
+    "react-native-pusher.js",
     "sagas.js",
     "utils.js",
     "actions.js",
     "constants.js",
     "reducers.js",
     "selectors.js"
+  ],
+  "rnpm": {
+    "commands": {
+      "prelink": "node_modules/rc-mobile-base/scripts/prepare.sh",
+      "postlink": "node_modules/rc-mobile-base/scripts/cocoapods.sh"
+    }
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
   ]
 }
