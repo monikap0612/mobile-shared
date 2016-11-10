@@ -24,6 +24,7 @@ export const tasksSelector = state => state.rooms.hotelTasks;
 export const activeRoomSelector = state => state.rooms.activeRoom;
 export const roomsUpdatesSelector = state => state.updates.rooms;
 export const usersSelector = state => state.users.users;
+export const filtersSelector = state => state.filters;
 
 export const getIndexFloors = (hotelFloors) => keyBy(hotelFloors || [], '_id');
 export const getIndexRoomStatuses = (hotelRoomStatuses) => keyBy(hotelRoomStatuses || [], '_id');
@@ -161,6 +162,41 @@ export const getPopupTasks = (hotelTasks, userId) => {
   }
 
   return filter(hotelTasks, task => !get(task, 'is_claimed') && !includes(get(task, 'assigned.rejected_ids', []), userId));
+}
+
+export const getFilteredRooms = (hotelRooms, filters) => {
+  if (!hotelRooms || !hotelRooms.length) {
+    return [];
+  }
+
+  if (!filters.isActiveFilter) {
+    return hotelRooms;
+  }
+
+  let filtered = hotelRooms;
+  if (filters.roomsSearchQuery) {
+    const cleanQuery = filters.roomsSearchQuery.toLowerCase();
+    filtered = filtered.filter(room => {
+      return room.name.toLowerCase().includes(cleanQuery);
+    });
+  }
+  if (filters.activeFloor) {
+    filtered = filtered.filter(room => {
+      return room.floor._id === filters.activeFloor;
+    });
+  }
+  if (filters.activeSection) {
+    filtered = filtered.filter(room => {
+      return room.section === filters.section;
+    });
+  }
+  if (filters.activeRooms && filters.activeRooms.length) {
+    filtered = filtered.filter(room => {
+      return filters.activeRooms.includes(room._id);
+    });
+  }
+
+  return filtered;
 }
 
 export const computedIndexFloors = createSelector([floorsSelector], getIndexFloors);

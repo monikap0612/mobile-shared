@@ -7,6 +7,7 @@ import assets from './assets';
 import users from './users';
 import updates from './updates';
 import glitches from './glitches';
+import filters from './filters';
 
 export default {
   rehydration,
@@ -18,4 +19,5 @@ export default {
   users,
   updates,
   glitches,
+  filters
 };
