@@ -7,7 +7,7 @@ const REDUX_PERSIST = {
   storeConfig: {
     storage: AsyncStorage,
     transforms: [immutableTransform],
-    blacklist: ['overlay', 'backend', 'filters']
+    blacklist: ['overlay', 'backend', 'form', 'filters']
   }
 };
 

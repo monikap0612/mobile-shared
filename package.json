@@ -26,6 +26,7 @@
     "babel-eslint": "^4.1.6",
     "babel-loader": "^6.2.0",
     "babel-plugin-check-es2015-constants": "^6.3.13",
+    "babel-plugin-transform-class-properties": "^6.18.0",
     "babel-plugin-transform-es2015-arrow-functions": "^6.3.13",
     "babel-plugin-transform-es2015-block-scoped-functions": "^6.3.13",
     "babel-plugin-transform-es2015-block-scoping": "^6.3.13",
@@ -65,6 +66,7 @@
     "react-native": "^0.35.0",
     "react-native-fetch-blob": "^0.9.6",
     "react-native-i18n": "^0.1.1",
+    "react-native-immersive": "0.0.4",
     "react-native-router-flux": "^3.36.0",
     "redux-persist": "^4.0.0-alpha6",
     "redux-saga": "^0.12.0",
@@ -77,11 +79,25 @@
     "lib",
     "src",
     "translations",
+    "android",
+    "ios",
+    "react-native-pusher.js",
     "sagas.js",
     "utils.js",
     "actions.js",
     "constants.js",
     "reducers.js",
     "selectors.js"
+  ],
+  "rnpm": {
+    "commands": {
+      "prelink": "node_modules/rc-mobile-base/scripts/prepare.sh",
+      "postlink": "node_modules/rc-mobile-base/scripts/cocoapods.sh"
+    }
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
   ]
 }
