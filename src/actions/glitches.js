@@ -60,6 +60,14 @@ export function glitchEmail(emailGlitch) {
   }
 }
 
+export function glitchTask(taskUUID) {
+  console.log(taskUUID);
+  return {
+    type: GlitchesTypes.GLITCH_TASK,
+    taskUUID
+  }
+}
+
 export function glitchClose(closedGlitch) {
   return {
     type: GlitchesTypes.GLITCH_CLOSE,
@@ -77,5 +85,6 @@ export default {
   glitchUpdate,
   glitchHandover,
   glitchEmail,
+  glitchTask,
   glitchClose
 }

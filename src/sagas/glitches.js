@@ -40,17 +40,11 @@ export default function({ apiUrl }) {
   // New Glitch
   function * submitNewGlitch(data) {
     const { auth: { hotelId, token, userId, user } } = yield select();
-    const {
-      glitchRoomId: room_id,
-      glitchRoomName: room_name,
-      glitchGuestName: name,
-      glitchGuestEmail: email,
-      glitchCategory: category,
-      glitchDescription: description,
-      glitchAction: action,
-      glitchFollowup: followup,
-      glitchCost: cost,
-    } = data;
+
+    data.creator_id = userId;
+    data.responsible_id = userId;
+    data.responsible_first_name = user.first_name;
+    data.responsible_last_name = user.last_name;
 
     return yield call(request, GLITCHES_API, {
       method: 'POST',
@@ -58,16 +52,13 @@ export default function({ apiUrl }) {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        room_id, room_name, guest_info: { name, email }, category,
-        description, action, followup, cost, creator_id: userId,
-        responsible_id: userId, responsible_first_name: user.first_name,
-        responsible_last_name: user.last_name
-      })
+      body: JSON.stringify(data)
     });
   }
 
   function * submitNewGlitchFlow({ newGlitch }) {
+    console.log(newGlitch);
+
     try {
       const response = yield call(submitNewGlitch, newGlitch);
       const data = yield call(fetchGlitches);
@@ -85,15 +76,9 @@ export default function({ apiUrl }) {
 
   // Update Glitch
   function * submitUpdateGlitch(data) {
-    const { auth: { hotelId, token, userId, user } } = yield select();
-    const {
-      uuid,
-      glitchCategory: category,
-      glitchDescription: description,
-      glitchAction: action,
-      glitchFollowup: followup,
-      glitchCost: cost
-    } = data;
+    const { auth: { hotelId, token, userId, user }, glitches: { activeGlitch: uuid } } = yield select();
+    data.user_id = userId;
+    console.log(uuid, data);
 
     return yield call(request, `${GLITCHES_API}/${uuid}`, {
       method: 'PUT',
@@ -101,14 +86,7 @@ export default function({ apiUrl }) {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        category,
-        description,
-        action,
-        followup,
-        cost,
-        user_id: userId
-      })
+      body: JSON.stringify(data)
     });
   }
 
@@ -129,14 +107,8 @@ export default function({ apiUrl }) {
   }
 
   // Handover Glitch
-  function * submitHandoverGlitch(data) {
-    const { auth: { hotelId, token, userId, user } } = yield select();
-    const {
-      uuid,
-      handover_id
-    } = data;
-
-    console.log(uuid, handover_id)
+  function * submitHandoverGlitch(handover_id) {
+    const { auth: { hotelId, token, userId, user }, glitches: { activeGlitch: uuid } } = yield select();
 
     return yield call(request, `${GLITCHES_API}/${uuid}/handover`, {
       method: 'PUT',
@@ -210,17 +182,48 @@ export default function({ apiUrl }) {
     yield * takeEvery(GlitchesTypes.GLITCH_EMAIL, submitEmailGlitchFlow);
   }
 
+  // Task Glitch
+  function * submitTaskGlitch(taskUUID) {
+    const { auth: { hotelId, token, userId, user }, glitches: { activeGlitch: uuid } } = yield select();
+    const data = {
+      task_id: taskUUID,
+      user_id: userId
+    };
+    console.log(data);
+
+    return yield call(request, `${GLITCHES_API}/${uuid}/task`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+  }
+
+  function * submitGlitchTaskFlow({ taskUUID }) {
+    console.log(taskUUID);
+    try {
+      yield call(submitTaskGlitch, taskUUID);
+      const data = yield call(fetchGlitches);
+      yield put(GlitchesActions.glitchesSuccess(data));
+    } catch (e) {
+      console.log(e);
+    } finally {
+
+    }
+  }
+
+  function * watchGlitchTaskFlow() {
+    yield * takeEvery(GlitchesTypes.GLITCH_TASK, submitGlitchTaskFlow);
+  }
+
   // Close Glitch
   function * submitCloseGlitch(data) {
-    const { auth: { hotelId, token, userId, user } } = yield select();
-    const {
-      uuid,
-      glitchCategory: category,
-      glitchDescription: description,
-      glitchAction: action,
-      glitchFollowup: followup,
-      glitchCost: cost
-    } = data;
+    const { auth: { hotelId, token, userId, user }, glitches: { activeGlitch: uuid } } = yield select();
+
+    data.user_id = userId;
+    data.is_completed = true;
 
     return yield call(request, `${GLITCHES_API}/${uuid}`, {
       method: 'PUT',
@@ -228,15 +231,7 @@ export default function({ apiUrl }) {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        category,
-        description,
-        action,
-        followup,
-        cost,
-        is_completed: true,
-        user_id: userId
-      })
+      body: JSON.stringify(data)
     });
   }
 
@@ -262,6 +257,7 @@ export default function({ apiUrl }) {
     watchUpdateGlitchFlow,
     watchHandoverGlitchFlow,
     watchEmailGlitchFlow,
+    watchGlitchTaskFlow,
     watchCloseGlitchFlow
   }
 }

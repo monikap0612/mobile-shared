@@ -31,7 +31,7 @@ export const getIndexRoomStatuses = (hotelRoomStatuses) => keyBy(hotelRoomStatus
 export const getIndexRoomHousekeepings = (hotelRoomHousekeepings) => keyBy(hotelRoomHousekeepings || [], '_id');
 export const getGroupCalendar = (hotelCalendar) => groupBy(hotelCalendar || [], 'room_id');
 export const getIndexPlanning = (hotelPlannings) => keyBy(hotelPlannings || [], 'room_id');
-export const getGroupNotes = (hotelRoomNotes) => keyBy(hotelRoomNotes || [], 'room_id');
+export const getGroupNotes = (hotelRoomNotes) => groupBy(hotelRoomNotes || [], 'room_id');
 export const getGroupTasks = (hotelTasks) => groupBy(hotelTasks, 'meta.room_id');
 export const getIsPlanned = (hotelPlannings) => filter(hotelPlannings, p => get(p, 'planning_user_id.length', 0) > 0).length > 0;
 export const getIndexUsers = (hotelUsers) => keyBy(hotelUsers || [], '_id');

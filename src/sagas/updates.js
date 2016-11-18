@@ -11,6 +11,7 @@ import UpdatesActions from '../actions/updates';
 import AssetsActions from '../actions/assets';
 import RoomsActions from '../actions/rooms';
 import OverlayActions from '../actions/overlay';
+import GlitchesActions from '../actions/glitches';
 
 import request from '../utils/request';
 
@@ -476,6 +477,12 @@ export default function({ apiUrl }) {
       }
 
       const response = yield call(createTask, task);
+      console.log(response);
+      console.log(data.activeGlitch);
+      if (data.activeGlitch && response.task.uuid) {
+        console.log(response.task.uuid);
+        yield put(GlitchesActions.glitchTask(response.task.uuid));
+      }
 
       if (hotel.isAttendantTaskNotes) {
         console.log('here');
@@ -543,6 +550,5 @@ export default function({ apiUrl }) {
     watchCreateTaskFlow,
     watchUpdateTaskFlow
   }
-  
-}
 
+}

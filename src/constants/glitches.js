@@ -14,5 +14,6 @@ export default createTypes(`
   GLITCH_UPDATE
   GLITCH_HANDOVER
   GLITCH_EMAIL
+  GLITCH_TASK
   GLITCH_CLOSE
 `);
