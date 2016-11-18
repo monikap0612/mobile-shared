@@ -4,19 +4,11 @@
   "description": "Shared codebase for roomchecking mobile apps",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf lib",
-    "lint": "npm run lint:src",
-    "lint:fix": "npm run lint:src -- --fix",
-    "lint:src": "eslint src test",
+    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint lib test",
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register ./test/**/*.test.js",
     "test:watch": "npm test -- --watch",
-    "check:src": "npm run lint:src && npm run test",
-    "check": "npm run check:src",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build": "npm run build:commonjs",
-    "stupid": "npm run clean && npm run check:src && npm run build && check-es3-syntax lib/ --kill --print",
-    "prepublish": "npm run clean && npm run build",
-    "push": "npm run build && git add . && git commit -m 'Build sources' && git push"
+    "check": "npm run lint && npm run test"
   },
   "author": "",
   "license": "MIT",
@@ -77,7 +69,6 @@
   },
   "files": [
     "lib",
-    "src",
     "translations",
     "android",
     "ios",
