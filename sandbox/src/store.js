@@ -5,19 +5,12 @@ import createSagaMiddleware, { END } from 'redux-saga';
 
 import Rehydration from '../lib/utils/rehydration';
 import persist from '../lib/persist';
-import createOfflineSagas from '../lib/offline/sagas';
 
 import rootReducer from './reducers';
 import sagas from './sagas';
 
 const IS_DEBUG = true;
 const USE_LOGGING = true;
-
-const requireSaga = (saga) => {
-  return require(`./sagas`).flows[saga];
-}
-
-const offlineSagas = createOfflineSagas({ requireSaga });
 
 const logger = createLogger({});
 const sagaMiddleware = createSagaMiddleware();
@@ -71,7 +64,6 @@ export default () => {
   }
 
   sagaMiddleware.run(sagas);
-  sagaMiddleware.run(offlineSagas);
 
   store.close = () => store.dispatch(END)
 
