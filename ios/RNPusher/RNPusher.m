@@ -31,12 +31,14 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(pusherWithKey:(NSString *)key)
 {
     RCTLogInfo(@"pusherWithKey, key: %@", key);
+    NSLog(@"pusherWithKey, key: %@", key);
     self.pusher = [PTPusher pusherWithKey:key delegate:self encrypted:YES];
 }
 
 RCT_EXPORT_METHOD(registerWithDeviceToken:(NSString *)deviceToken)
 {
     RCTLogInfo(@"registerWithDeviceToken, deviceToken: %@", deviceToken);
+    NSLog(@"registerWithDeviceToken, deviceToken: %@", deviceToken);
     NSData *tokenData = [self stringToDeviceToken:deviceToken];
     [[[self pusher] nativePusher] registerWithDeviceToken:tokenData];
 }
@@ -44,12 +46,14 @@ RCT_EXPORT_METHOD(registerWithDeviceToken:(NSString *)deviceToken)
 RCT_EXPORT_METHOD(subscribe:(NSString *)interest)
 {
     RCTLogInfo(@"subscribe, interest: %@", interest);
+    NSLog(@"subscribe, interest: %@", interest);
     [[[self pusher] nativePusher] subscribe:interest];
 }
 
 RCT_EXPORT_METHOD(unsubscribe:(NSString *)interest)
 {
     RCTLogInfo(@"unsubscribe, interest: %@", interest);
+    NSLog(@"subscribe, interest: %@", interest);
     [[[self pusher] nativePusher] unsubscribe:interest];
 }
 
