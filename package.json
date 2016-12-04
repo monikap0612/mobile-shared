@@ -8,7 +8,11 @@
     "lint": "eslint lib test",
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register ./test/**/*.test.js",
     "test:watch": "npm test -- --watch",
-    "check": "npm run lint && npm run test"
+    "check": "npm run lint && npm run test",
+    "sandbox:prepare": "rimraf sandbox/lib && cp -r lib sandbox",
+    "sandbox:ios": "npm run sandbox:prepare && cd sandbox && react-native run-ios",
+    "sandbox:android": "npm run sandbox:prepare && cd sandbox && react-native run-ios",
+    "sandbox": "npm run sandbox:ios"
   },
   "author": "",
   "license": "MIT",
@@ -51,7 +55,7 @@
     "eslint-plugin-react": "^3.16.1",
     "gitbook-cli": "^2.3.0",
     "glob": "^6.0.4",
-    "lodash": "^4.16.4",
+    "lodash": "^4.17.0",
     "mocha": "^3.1.2",
     "moment": "^2.15.1",
     "ramda": "^0.22.1",
