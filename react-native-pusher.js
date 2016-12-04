@@ -1,6 +1,6 @@
 'use strict';
 
-const { NativeModules, Platform, PushNotificationIOS } = require('react-native');
+const { NativeModules, Platform, PushNotificationIOS, Alert } = require('react-native');
 const DeviceInfo = require('react-native-device-info');
 
 const Pusher = NativeModules.RNPusher ;
@@ -12,6 +12,7 @@ const nativePusher = function(options) {
   };
   const onRegistrationError = (error) => {
     console.error(error);
+    Alert.alert('PN Error', error, [{text: 'OK', onPress: () => console.log('OK Pressed')},]);
   };
 
   return {
