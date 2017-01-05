@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Provider, connect } from 'react-redux';
 import { Container, Header, Title, Content, Button, Icon, Spinner, List, ListItem, Text, H2, H3, View } from 'native-base';
+import { NetInfo } from 'react-native';
 import { createStructuredSelector } from 'reselect';
 import NativeTachyons, {styles as s} from 'react-native-style-tachyons';
 
@@ -8,8 +9,9 @@ import UpdateActions from '../lib/actions/updates';
 import OverlayActions from '../lib/actions/overlay';
 
 import { isVisibleOverlaySelector } from '../lib/selectors/overlay';
-import { offlineQueueSelector, offlineMetaSelector } from '../lib/offline/selectors';
-import OfflineActions from '../lib/offline/actions';
+import { Selectors as OfflineSelectors, Actions as OfflineActions } from '../lib/offline';
+import Network, { Actions as NetworkActions, Selectors as NetworkSelectors } from '../lib/network';
+import Socket from '../lib/utils/socket';
 
 import { StyleSheet } from 'react-native';
 
@@ -34,12 +36,46 @@ const renderItem = (dequeue) => (item) => (
 )
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    // const socket = new Socket(this.props.dispatch, {});
+    const network = new Network(this.props.dispatch);
+
+    this.network = network;
+    // this.socket = socket;
+  }
+
   static propTypes = {
     store: PropTypes.object.isRequired
   }
 
+  componentWillUnmount() {
+    // this.socket.deactivate();
+    this.network.deactivate();
+  }
+
+  componentDidMount() {
+    const userId = '5630faccff2c919d6400042f';
+    const hotelId = '55d06baa99295b3a52000000';
+    const socket = this.socket;
+
+    this.network.activate()
+    // if (!socket.isActive) {
+    //   NetInfo.fetch().done((status) => {
+    //     const normalized = status.toLowerCase();
+    //     if (normalized === 'wifi' || normalized === 'wimax') {
+    //       this.props.dispatch(NetworkActions.statusOnline());
+    //     } else {
+    //       this.props.dispatch(NetworkActions.statusOffline());
+    //     }
+    //   })
+    //   socket.activate(userId, hotelId);
+    // }
+  }
+
   render() {
-    const { isVisibleOverlay, queue, meta } = this.props;
+    const { isVisibleOverlay, queue, meta,network } = this.props;
     return (
       <Provider store={this.props.store}>
           <Container> 
@@ -48,6 +84,7 @@ class App extends Component {
               </Header>
               <Content>
                   <View style={[s.flx_row, s.jcc, s.pv1]}>
+                    <Icon name="ios-wifi" style={{ color: network.isOnline ? 'green' : 'red' }} />
                     <Button style={[s.mh1]} primary onPress={this.props.roomNotePost({ roomId: 1, note: 'note' })}>
                       Room Note Post
                     </Button>
@@ -91,9 +128,15 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   isVisibleOverlay: isVisibleOverlaySelector,
-  queue: offlineQueueSelector,
-  meta: offlineMetaSelector,
+  queue: OfflineSelectors.offlineQueueSelector,
+  meta: OfflineSelectors.offlineMetaSelector,
+  network: NetworkSelectors.network,
 });
+// const mapStateToProps = state => ({
+//   isVisibleOverlay: isVisibleOverlaySelector(state),
+//   queue: OfflineSelectors.offlineQueueSelector(state),
+//   meta: OfflineSelectors.offlineMetaSelector(state),
+// });
 
 const mapDispatchToProps = (dispatch) => ({
   roomNotePost: (room) => () => dispatch(UpdateActions.roomNoteAdd(room)),
