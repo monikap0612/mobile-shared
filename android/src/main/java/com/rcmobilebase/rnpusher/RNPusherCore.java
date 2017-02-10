@@ -35,10 +35,13 @@ public class RNPusherCore extends ReactContextBaseJavaModule {
     ReactContext reactContext;
     PusherAndroid pusher;
     PushNotificationRegistration nativePusher;
+    private static boolean isSubscribed;
+
 
     public RNPusherCore(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
+        isSubscribed = false;
     }
 
     @ReactMethod
@@ -114,21 +117,39 @@ public class RNPusherCore extends ReactContextBaseJavaModule {
     public void subscribe(String interest) {
         Log.d(TAG, "Interest: " + interest);
 
-        this.nativePusher.subscribe(interest, new InterestSubscriptionChangeListener() {
-            @Override
-            public void onSubscriptionChangeSucceeded() {
-                Log.d(TAG, "Subscription successful");
-            }
+        if (!isSubscribed) {
+          this.nativePusher.subscribe(interest, new InterestSubscriptionChangeListener() {
+              @Override
+              public void onSubscriptionChangeSucceeded() {
+                  Log.d(TAG, "Subscription successful");
+                  isSubscribed = true;
+              }
 
-            @Override
-            public void onSubscriptionChangeFailed(int statusCode, String response) {
-                Log.e(TAG, "Subscription failed with code " + statusCode + " " + response);
-            }
-        });
+              @Override
+              public void onSubscriptionChangeFailed(int statusCode, String response) {
+                  Log.e(TAG, "Subscription failed with code " + statusCode + " " + response);
+                  isSubscribed = false;
+              }
+          });
+        }
     }
 
     @ReactMethod
     public void unsubscribe(String interest) {
-        this.nativePusher.unsubscribe(interest);
+        if (isSubscribed) {
+          this.nativePusher.unsubscribe(interest, new InterestSubscriptionChangeListener() {
+              @Override
+              public void onSubscriptionChangeSucceeded() {
+                  Log.d(TAG, "Unsubscription successful");
+                  isSubscribed = false;
+              }
+
+              @Override
+              public void onSubscriptionChangeFailed(int statusCode, String response) {
+                  Log.e(TAG, "Unsubscription failed with code " + statusCode + " " + response);
+                  isSubscribed = true;
+              }
+          });
+        }
     }
 }
