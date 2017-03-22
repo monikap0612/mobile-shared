@@ -1,4 +1,267 @@
 {
+  "inspector": {
+    "attendantmodal": {
+      "index": {
+        "reset": "Reset",
+        "priority": "Priority",
+        "attendant": "Attendant",
+        "overwrite-guest-status": "Overwrite guest status",
+        "send-message-to-attendant": "Send message to attendant"
+      }
+    },
+    "tableheader": {
+      "index": {
+        "attendant-runner": "Attendant & runner",
+        "tasks": "Tasks",
+        "my-assigned-tasks": "My assigned tasks",
+        "open-maintenances": "Open maintenances",
+        "recently-closed-tasks": "Recently closed tasks",
+        "open-tasks": "Open tasks"
+      }
+    },
+    "main": {
+      "index": {
+        "rooms": "Rooms",
+        "all-floors": "All floors",
+        "floor": "Floor"
+      },
+      "rooms-filter": {
+        "reset": "Reset",
+        "floors": "Floors",
+        "filters": "Filters"
+      },
+      "rooms-information": {
+        "reset": "Reset",
+        "vip": "Vip"
+      },
+      "notes": {
+        "room-notes": "Room notes"
+      },
+      "roommessageform": {
+        "room-message": "Room message"
+      },
+      "roomnotesmodal": {
+        "no-pms-notes-for-this-reservation": "No pms notes for this reservation",
+        "room-notes": "Room notes",
+        "pms-notes": "Pms notes",
+        "messaging": "Messaging"
+      },
+      "filters-drawer": {
+        "1": "1"
+      }
+    },
+    "housekeeping": {
+      "index": {
+        "backlog": "Backlog",
+        "today": "Today"
+      }
+    },
+    "popup": {
+      "index": {
+        "okay": "Okay",
+        "submitted-time": "Submitted time",
+        "notification": "Notification",
+        "accept": "Accept",
+        "new-task": "New task",
+        "location": "Location",
+        "reject": "Reject",
+        "created-by": "Created by",
+        "last-message": "Last message"
+      }
+    },
+    "createtask": {
+      "index": {
+        "photo": "Photo",
+        "priority-task": "Priority task",
+        "assignee": "Assignee",
+        "blocking-task": "Blocking task",
+        "location": "Location",
+        "mandatory-task": "Mandatory task",
+        "asset-and-action": "Asset and action"
+      },
+      "extraoption": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "navigation": {
+      "links": {
+        "housekeeping": "Housekeeping",
+        "notifications": "Notifications",
+        "planning": "Planning",
+        "maintenance": "Maintenance",
+        "main": "Main",
+        "history": "History"
+      }
+    },
+    "createnotification": {
+      "index": {
+        "select-a-location-or-change-user": "Select a location or change user",
+        "photo": "Photo",
+        "send-notification": "Send notification",
+        "to": "To",
+        "location": "Location",
+        "message": "Message",
+        "quick-notifications": "Quick notifications"
+      },
+      "selectusermodal": {
+        "select-reciepent": "Select reciepent"
+      }
+    },
+    "founditem": {
+      "index": {
+        "submit-lost-item": "Submit lost item"
+      }
+    },
+    "notifications": {
+      "notificationheader": {
+        "status": "Status",
+        "message": "Message",
+        "time": "Time",
+        "room": "Room",
+        "user": "User"
+      },
+      "assignedheader": {
+        "status": "Status",
+        "message": "Message",
+        "time": "Time",
+        "room": "Room",
+        "creator": "Creator"
+      },
+      "status": {
+        "okay": "Okay",
+        "started": "Started",
+        "rejected": "Rejected",
+        "paused": "Paused",
+        "canceled": "Canceled",
+        "waiting": "Waiting",
+        "pending": "Pending"
+      },
+      "index": {
+        "sent-attendant-notifications": "Sent & attendant notifications",
+        "assigned-notifications": "Assigned notifications"
+      }
+    },
+    "catalog": {
+      "index": {
+        "room-photos": "Room photos"
+      }
+    },
+    "planning": {
+      "index": {
+        "add-attendant": "Add attendant",
+        "reset": "Reset",
+        "prev": "Prev",
+        "filters": "Filters",
+        "next": "Next"
+      },
+      "filtersdrawer": {
+        "all": "All",
+        "rooms-to-plan": "Rooms to plan",
+        "stayover": "Stayover",
+        "departure": "Departure",
+        "arrivals": "Arrivals",
+        "da": "D/a",
+        "change-sheets": "Change sheets",
+        "blocked": "Blocked"
+      }
+    },
+    "room": {
+      "index": {
+        "information": "Information",
+        "hsk-tasks": "Hsk tasks",
+        "maintenances": "Maintenances",
+        "catalog": "Catalog",
+        "lost-found": "Lost & found",
+        "image-about-how-the-room-should-look": "Image about how the room should look",
+        "questionnaires": "Questionnaires"
+      }
+    },
+    "playground": {
+      "index": {
+        "let-go": "Let go"
+      }
+    },
+    "components": {
+      "selectassignmentmodal": {
+        "select-assignment": "Select assignment",
+        "search-users": "Search users"
+      },
+      "selectlocationmodal": {
+        "select-locations": "Select locations",
+        "search-locations": "Search locations"
+      },
+      "selectassetactionmodal": {
+        "search-assets": "Search assets",
+        "select-asset": "Select asset"
+      }
+    },
+    "chooseattendantmodal": {
+      "index": {
+        "choose-attendant": "Choose attendant"
+      }
+    },
+    "information": {
+      "info": {
+        "dnd": "Dnd",
+        "room-type": "Room type",
+        "room-attendant": "Room attendant",
+        "last-action": "Last action",
+        "standart-room": "Standart room",
+        "emilie-persion": "Emilie persion"
+      },
+      "index": {
+        "room": "Room"
+      },
+      "pmsnotes": {
+        "pms-notes": "Pms notes"
+      },
+      "notes": {
+        "room-notes": "Room notes"
+      },
+      "vipstatus": {
+        "vip-status": "Vip status"
+      },
+      "attendantstatus": {
+        "attendant-status": "Attendant status"
+      }
+    },
+    "imagegallery": {
+      "index": {
+        "image-about-how-the-room-should-look": "Photos for room standards"
+      }
+    },
+    "updatespopup": {
+      "index": {
+        "new": "New",
+        "dismiss": "Dismiss",
+        "you-have": "You have",
+        "show": "Show"
+      }
+    },
+    "maintenance": {
+      "index": {
+        "backlog": "Backlog",
+        "today": "Today"
+      }
+    },
+    "history": {
+      "index": {
+        "reset": "Reset",
+        "all": "All",
+        "other": "Other",
+        "guests": "Guests",
+        "events": "Events",
+        "cleaning": "Cleaning"
+      },
+      "historyheader": {
+        "action": "Action",
+        "time": "Time",
+        "room": "Room",
+        "user": "User"
+      }
+    }
+  },
   "maintenance": {
     "createtask": {
       "assetactiondescription": {
@@ -156,7 +419,17 @@
       },
       "cleaninginfo": {
         "change-sheets": "Change sheets",
-        "pms": "Pms"
+        "pms": "Pms",
+        "credits": "Credits"
+      },
+      "menu": {
+        "clean": "Clean",
+        "start-cleaning": "Start Cleaning",
+        "delay": "Later",
+        "dnd": "DND",
+        "refuse": "Refuse",
+        "inspect": "Inspect Room",
+        "no-check": "No Check"
       }
     },
     "main": {
@@ -180,6 +453,188 @@
     "lostfound": {
       "index": {
         "report-lost-and-found-item": "Report lost and found item",
+        "submit-lost-item": "Submit lost item"
+      }
+    }
+  },
+  "runner": {
+    "glitch-form": {
+      "index": {
+        "update-glitch": "Update glitch",
+        "room": "Room",
+        "close-glitch": "Close glitch",
+        "submit-new-glitch": "Submit new glitch",
+        "compensation-cost": "Compensation cost",
+        "internal-followup": "Internal followup",
+        "vip": "Vip",
+        "add-task": "Add task",
+        "choose-location": "Choose location",
+        "send-glitch": "Send glitch",
+        "actions-to-resolve": "Actions to resolve",
+        "eur": "Eur",
+        "incident-description": "Incident description",
+        "email": "Email",
+        "name": "Name"
+      },
+      "glitch-category-selector": {
+        "select-glitch": "Select glitch",
+        "select-glitch-category": "Select glitch category",
+        "select-category": "Select category"
+      }
+    },
+    "components": {
+      "group-select-modal": {
+        "close": "Close",
+        "select-assignment": "Select assignment"
+      },
+      "group-select-row": {
+        "text": "Text"
+      },
+      "location-select-modal": {
+        "close": "Close",
+        "select-location": "Select location"
+      },
+      "room-note-row": {
+        "remove": "Remove"
+      },
+      "task-card": {
+        "created-by": "Created by",
+        "location": "Location",
+        "last-message": "Last message",
+        "submitted-time": "Submitted time"
+      },
+      "special-select-row": {
+        "text": "Text"
+      },
+      "assignment-select": {
+        "attendants": "Attendants",
+        "inspectors": "Inspectors",
+        "management": "Management",
+        "housekeeping": "Housekeeping",
+        "concierge": "Concierge",
+        "maintenance": "Maintenance",
+        "groups": "Groups",
+        "runners": "Runners"
+      },
+      "user-select-row": {
+        "text": "Text"
+      },
+      "inventory-update-row": {
+        "reset": "Reset"
+      },
+      "room-options": {
+        "room-gallery": "Room gallery",
+        "send-task": "Send task",
+        "clean-room": "Clean room",
+        "guest-glitch": "Guest glitch",
+        "hsk-notes": "Hsk notes",
+        "lost-found": "Lost & found",
+        "inventory": "Inventory",
+        "maintenance": "Maintenance"
+      },
+      "room-timer": {
+        "cancel": "Cancel",
+        "done": "Done"
+      },
+      "user-select-modal": {
+        "management": "Management",
+        "housekeeping": "Housekeeping",
+        "concierge": "Concierge",
+        "select-assignment": "Select assignment",
+        "maintenance": "Maintenance",
+        "close": "Close"
+      },
+      "asset-action-description": {
+        "yes": "Yes",
+        "no": "No",
+        "no-actions-for-created-asset": "No actions for created asset",
+        "you-must-first-select-an-asset": "You must first select an asset",
+        "there-are-no-actions-for-your-asset": "There are no actions for your asset"
+      },
+      "asset-select-modal": {
+        "close": "Close",
+        "select-asset": "Select asset"
+      },
+      "room-info": {
+        "change-sheets": "Change sheets",
+        "pms": "Pms"
+      },
+      "reservation-nights": {
+        "of": "Of",
+        "nights": "Nights"
+      },
+      "task-settings": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "gallery-row-item": {
+        "label": "Label"
+      }
+    },
+    "room": {
+      "restock": {
+        "cancel-restock": "Cancel restock",
+        "room-inventory": "Room inventory",
+        "mark-as-restocked": "Mark as restocked"
+      }
+    },
+    "notes": {
+      "index": {
+        "previous-notes": "Previous notes",
+        "add-note": "Add note",
+        "new-room-note": "New room note"
+      }
+    },
+    "glitch": {
+      "glitch-read-only": {
+        "start": "Start",
+        "none": "None",
+        "send-email": "Send email"
+      }
+    },
+    "clean": {
+      "index": {
+        "confirm-dnd": "Confirm dnd",
+        "change-sheets": "Change sheets",
+        "pms": "Pms"
+      }
+    },
+    "turndown": {
+      "subheader": {
+        "all-categories": "All categories"
+      },
+      "index": {
+        "all-categories": "All categories"
+      },
+      "modalcontent": {
+        "finish-turndown": "Finish turndown",
+        "cancel-turndown": "Cancel turndown",
+        "refuse": "Refuse",
+        "delay": "Delay",
+        "dnd": "Dnd"
+      }
+    },
+    "main": {
+      "filter-grid": {
+        "reset": "Reset",
+        "close": "Close"
+      },
+      "index": {
+        "close-floor": "Close floor"
+      }
+    },
+    "navigation": {
+      "links": {
+        "main": "Main",
+        "tasks": "Tasks",
+        "inventory-restock": "Inventory restock",
+        "notifications": "Notifications",
+        "turndown-service": "Turndown service",
+        "glitches": "Glitches"
+      }
+    },
+    "lostfound": {
+      "index": {
         "submit-lost-item": "Submit lost item"
       }
     }
