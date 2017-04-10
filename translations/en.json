@@ -321,7 +321,23 @@
     }
   },
   "attendant": {
+    "headers": {
+      "clean": "Clean",
+      "inspect": "Inspect",
+      "notes": "Notes",
+      "gallery": "Gallery",
+      "lost-found": "Lost & Found",
+      "inventory": "Inventory",
+      "maintenance": "Maintenance",
+      "inventory-restock": "Inventory Restock"
+    },
     "components": {
+      "reservation-component": {
+        "reservation": "Reservation"
+      },
+      "room-row-item": {
+        "tasks": "tasks"
+      },
       "group-select-row": {
         "text": "Text"
       },
@@ -412,7 +428,37 @@
     },
     "clean": {
       "taskssubheader": {
-        "tasks": "Tasks"
+        "tasks": "Tasks",
+        "show-tasks": "Show tasks",
+        "hide-tasks": "Hide tasks"
+      },
+      "finishmenu": {
+        "confirm-dnd": "Confirm dnd",
+        "cancel-finish": "Cancel Finish",
+        "cancel-dnd": "Cancel DND",
+        "cancel-refuse": "Cancel Refuse"
+      },
+      "cleaninginfo": {
+        "change-sheets": "Change sheets",
+        "pms": "Pms",
+        "credits": "Credits",
+        "cleaning-info": "Cleaning Info"
+      },
+      "menu": {
+        "clean": "Clean",
+        "start-cleaning": "Start Cleaning",
+        "delay": "Later",
+        "dnd": "DND",
+        "refuse": "Refuse",
+        "inspect": "Inspect Room",
+        "no-check": "No Check"
+      }
+    },
+    "inspect": {
+      "taskssubheader": {
+        "tasks": "Tasks",
+        "show-tasks": "Show tasks",
+        "hide-tasks": "Hide tasks"
       },
       "finishmenu": {
         "confirm-dnd": "Confirm dnd"
@@ -435,10 +481,24 @@
     "main": {
       "filter-grid": {
         "reset": "Reset",
-        "close": "Close"
+        "close": "Close",
+        "occupied": "Occupied",
+        "vacant": "Vacant",
+        "other": "other",
+        "search": "Search rooms, guests...",
+        "inspt": "Inspt",
+        "clean": "Clean",
+        "dirty": "Dirty",
+        "other": "Other"
       },
       "index": {
-        "close-floor": "Close floor"
+        "close-floor": "Close floor",
+        "priority-rooms": "Priority rooms",
+        "paused-rooms": "Paused rooms",
+        "rooms": "Rooms",
+        "floor": "Floor",
+        "priority": "Priority",
+        "paused": "Paused"
       }
     },
     "navigation": {
@@ -453,7 +513,8 @@
     "lostfound": {
       "index": {
         "report-lost-and-found-item": "Report lost and found item",
-        "submit-lost-item": "Submit lost item"
+        "submit-lost-item": "Submit lost item",
+        "description": "Add a description"
       }
     }
   },
@@ -620,7 +681,10 @@
         "close": "Close"
       },
       "index": {
-        "close-floor": "Close floor"
+        "close-floor": "Close floor",
+        "rooms": "Rooms",
+        "floor": "Floor",
+        "tasks": "Tasks"
       }
     },
     "navigation": {
@@ -640,6 +704,37 @@
     }
   },
   "base": {
+    "createnotification": {
+      "selectuser": {
+        "tap": "Tap to change"
+      }
+    },
+    "tasks": {
+      "tabs": {
+        "today": "Today",
+        "backlog": "Backlog",
+        "sent": "Senttap"
+      }
+    },
+    "components": {
+      "fullscreenphoto": {
+        "no-photo": "No Photo"
+      },
+      "assetactiondescription": {
+        "no-actions": "No actions for created asset",
+        "first-select": "You must first select an asset",
+        "no-available": "There are no actions for your asset",
+        "action": "Action",
+        "select-asset": "Select the asset",
+        "location": "Location",
+        "description": "Description",
+        "priority": "Priority",
+        "yes": "Yes",
+        "no": "No",
+        "submit-maintenance": "Submit Maintenance",
+        "continue": "Continue"
+      }
+    },
     "navigation": {
       "links": {
         "assets": "Assets",

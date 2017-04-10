@@ -3,6 +3,7 @@
 const { NativeModules, Platform, PushNotificationIOS, Alert } = require('react-native');
 const DeviceInfo = require('react-native-device-info');
 
+
 const Pusher = NativeModules.RNPusher ;
 
 const nativePusher = function(options) {
@@ -36,8 +37,12 @@ const nativePusher = function(options) {
       if (Platform.OS === 'ios' && DeviceInfo.isEmulator()) { return; }
 
       if (Platform.OS === 'ios') {
-        PushNotificationIOS.removeEventListener('register', onRegister);
-        PushNotificationIOS.removeEventListener('registrationError', onRegistrationError);
+        try {
+          PushNotificationIOS.removeEventListener('register', onRegister);
+          PushNotificationIOS.removeEventListener('registrationError', onRegistrationError);
+        } catch (error) {
+          console.log(error)
+        }
       }
     },
 
@@ -49,8 +54,12 @@ const nativePusher = function(options) {
 
     unsubscribe(interest) {
       if (Platform.OS === 'ios' && DeviceInfo.isEmulator()) { return; }
-
-      Pusher.unsubscribe(interest);
+      
+      try {
+        Pusher.unsubscribe(interest);
+      } catch (error) {
+        console.log(error)
+      }
     }
   };
 }

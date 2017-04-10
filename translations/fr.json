@@ -80,7 +80,7 @@
         "text": "Texte"
       },
       "inventory-update-row": {
-        "reset": "Remettre à zéro"
+        "reset": "Reset"
       },
       "user-select-row": {
         "text": "Texte"
@@ -167,7 +167,7 @@
     },
     "main": {
       "filter-grid": {
-        "reset": "Remettre à zéro",
+        "reset": "Reset",
         "close": "Fermer"
       },
       "index": {
@@ -178,7 +178,7 @@
       "links": {
         "tasks": "Tâches",
         "notifications": "Notifications",
-        "main": "écran principal",
+        "main": "Écran principal",
         "inventory-restock": "Gestionnaire de stock"
       }
     },
