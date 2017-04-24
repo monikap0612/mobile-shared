@@ -704,6 +704,32 @@
     }
   },
   "base": {
+    "ubiquitous": {
+      "alert": "Alert",
+      "locations": "Locations",
+      "location": "Location",
+      "search-locations": "Search locations",
+      "select-location": "Select location",
+      "search-users": "Search users",
+      "select-user": "Select user",
+      "search-assets": "Search assets",
+      "enter-a-message": "Enter a message",
+      "message": "Message",
+      "to": "To",
+      "photo": "Photo",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "continue": "Continue",
+      "attendant": "Attendant",
+      "inspector": "Inspector",
+      "maintenance": "Maintenance",
+      "runner": "Runner",
+      "receptionist": "Receptionist",
+      "adminstrator": "Administrator",
+      "group": "Group",
+      "creator": "Creator",
+      "last-message": "Last message"
+    },
     "createnotification": {
       "selectuser": {
         "tap": "Tap to change"
@@ -742,12 +768,18 @@
         "rooms": "Rooms",
         "closed": "Closed",
         "main": "Main",
-        "sent": "Sent"
+        "sent": "Sent",
+        "logout": "Logout"
       }
     },
     "glitch-form": {
       "index": {
         "room": "Room",
+        "enter-room-number": "Enter Room Number",
+        "enter-guest-name": "Enter Guest Name",
+        "enter-guest-email": "Enter Guest Email",
+        "select-glitch-category": "Select glitch category",
+        "glitch-information": "Glitch information",
         "submit-new-glitch": "Submit new glitch",
         "compensation-cost": "Compensation cost",
         "name": "Name",
