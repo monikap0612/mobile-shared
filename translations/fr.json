@@ -56,14 +56,14 @@
         "components": {
             "group-select-modal": {
                 "close": "fermer",
-                "select-assignment": "Sélectionner un destinataire"
+                "select-assignment": "Sélectionnez un destinataire"
             },
             "group-select-row": {
                 "text": "texte"
             },
             "location-select-modal": {
                 "close": "fermer",
-                "select-location": "sélectionner un lieu"
+                "select-location": "sélectionnez un lieu"
             },
             "room-note-row": {
                 "remove": "supprimer"
@@ -459,7 +459,7 @@
             "group": "Groupe",
             "floor": "Etage",
             "all-runners": "Tous les Equipiers / Runners",
-            "select-location": "Sélectionner un lieu",
+            "select-location": "Sélectionnez un lieu",
             "inspected": "Inspectée",
             "mandatory-task": "Tâche obligatoire",
             "priority": "Priorité",
@@ -510,7 +510,7 @@
             "clean": "Propre",
             "search-tasks": "Chercher une tâche",
             "send-housekeeping-task": "Envoyer tâche HK",
-            "select-locations": "Sélectionner un lieu",
+            "select-locations": "Sélectionnez un lieu",
             "maintenance-team": "Equipe de maintenance",
             "block": "Bloquer",
             "rooms": "Pièces",
@@ -519,20 +519,22 @@
             "completed": "Completée",
             "cancelled": "Annulée",
             "finish": "Terminer",
-            "start": "Commencer",
+            "start": "Débuter",
             "accept": "Accepter",
             "acknowledge": "Vue",
             "convert": "Convertir",
             "delay": "Reporter",
             "resume": "Reprendre",
             "pause": "Pause",
-            "quick": "Equipe",
+            "quick": "Equipes",
             "people": "Personnes",
             "no-location": "Pas de lieu",
             "exit-selection": "Fermer",
             "assignments": "Assignation",
             "update": "Mise à jour",
-            "clear": "Supprimer"
+            "clear": "Supprimer",
+            "task": "Tâche",
+            "tasks": "Tâches"
         },
         "realtime": {
             "index": {
@@ -588,8 +590,8 @@
         },
         "notifications": {
             "index": {
-                "assigned": "Assignée",
-                "sent": "Envoyée"
+                "assigned": "Assignées",
+                "sent": "Envoyées"
             },
             "quicknotificationform": {
                 "send-message": "Envoyer le message"
@@ -597,8 +599,8 @@
         },
         "tasks": {
             "tabs": {
-                "today": "aujourd'hui",
-                "sent": "envoyée",
+                "today": "Aujourd'hui",
+                "sent": "Envoyées",
                 "backlog": "En retard"
             },
             "dummy": {
@@ -634,16 +636,19 @@
         },
         "navigation": {
             "links": {
-                "assets": "Equipement",
+                "assets": "Equipements",
                 "notifications": "Notifications",
                 "logout": "Déconnexion",
                 "rooms": "Chambres",
-                "closed": "Fermés",
+                "closed": "Fermées",
                 "main": "Ecran principal",
-                "sent": "Envoyée"
+                "sent": "Envoyées"
             },
             "index": {
                 "create-notification": "Créer une notification",
+                "tasks": "Tâches",
+                "notifications": "Notifications",
+                "convert-task": "Convertir en tâche",
                 "home": "Principale"
             }
         },
@@ -728,7 +733,7 @@
         },
         "housekeeping": {
             "index": {
-                "today": "aujourd'hui",
+                "today": "Aujourd'hui",
                 "search-tasks-rooms-users": "Rechercher des chambres, utilisateurs etc…",
                 "backlog": "En retard"
             }
@@ -932,7 +937,7 @@
         },
         "maintenance": {
             "index": {
-                "today": "aujourd'hui",
+                "today": "Aujourd'hui",
                 "search-tasks-rooms-users": "Rechercher des chambres, utilisateurs etc…",
                 "backlog": "En retard"
             }
@@ -1038,7 +1043,7 @@
         },
         "main": {
             "index": {
-                "create-new-task-for": "Crée une nouvelle tâche pour"
+                "create-new-task-for": "Créer une nouvelle tâche pour"
             },
             "filterbutton": {
                 "filters": "Filtres"
@@ -1056,7 +1061,7 @@
             "scenes": {
                 "closed-tasks": "Tâches fermées",
                 "tasks": "Tâches",
-                "hotel-assets": "Equipement de l’hôtel",
+                "hotel-assets": "Equipements de l’hôtel",
                 "create-task": "Créer une tâche",
                 "reassign-task": "Réassigner la tâche",
                 "sent-tasks": "Tâches envoyées",
@@ -1076,6 +1081,10 @@
         "rooms": {
             "dummy": {
                 "occupaied": "Occupée"
+            },
+            "index": {
+                "close-floor": "Fermer",
+                "close-room": "Fermer"
             }
         }
     }

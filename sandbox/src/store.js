@@ -9,8 +9,8 @@ import persist from '../lib/persist';
 import rootReducer from './reducers';
 import sagas from './sagas';
 
-const IS_DEBUG = true;
-const USE_LOGGING = true;
+const IS_DEBUG = false;
+const USE_LOGGING = false;
 
 const logger = createLogger({});
 const sagaMiddleware = createSagaMiddleware();

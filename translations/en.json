@@ -531,7 +531,9 @@
             "exit-selection": "Exit selection",
             "assignments": "Assignments",
             "update": "Update",
-            "clear": "Clear"
+            "clear": "Clear",
+            "task": "Task",
+            "tasks": "Tasks"
         },
         "realtime": {
             "index": {
@@ -639,6 +641,9 @@
             },
             "index": {
                 "home": "Home",
+                "tasks": "Tasks",
+                "notifications": "Notifications",
+                "convert-task": "Convert Task",
                 "create-notification": "Create Notification"
             }
         },
@@ -1071,6 +1076,10 @@
         "rooms": {
             "dummy": {
                 "occupaied": ""
+            },
+            "index": {
+                "close-floor": "Close floor",
+                "close-room": "Close room"
             }
         }
     }
