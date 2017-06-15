@@ -186,6 +186,12 @@
         }
     },
     "attendant": {
+        "alert": {
+            "index": {
+                "room-message": "Message vers chambre",
+                "priority": "Priorité"
+            }
+        },
         "swipeoutoptions": {
             "index": {
                 "close": "Fermer"
@@ -204,7 +210,7 @@
             "finishmenu": {
                 "cancel-dnd": "Annuler le DND",
                 "cancel-refuse": "Annuler le Refus",
-                "cancel-finish": "Annuler \"Nettoyée\"",
+                "cancel-finish": "Annuler Nettoyée",
                 "confirm-dnd": "Confirmer le DND"
             },
             "cleaninginfo": {
@@ -430,6 +436,7 @@
         "ubiquitous": {
             "all": "Tout",
             "departed": "Partis",
+            "departure": "Départ",
             "photo": "Photo",
             "inspt": "Inspt",
             "assignee": "Assignation",

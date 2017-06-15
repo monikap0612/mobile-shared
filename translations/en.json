@@ -2,9 +2,20 @@
     "runner": {
         "glitch-form": {
             "index": {
-                "update-glitch": "Update glitch",
+                "add-experience-description": "Add experience description",
+                "add-actions-to-resolve": "Add actions to resolve",
+                "add-followup-instructions": "Add followup instructions",
+                "guest-information": "Guest Information",
+                "vip-status-optional": "VIP status (optional)",
+                "update-glitch": "Update experience",
                 "name": "Name",
-                "close-glitch": "Close glitch",
+                "enter-room-name": "Enter room number",
+                "enter-guest-name": "Enter guest name",
+                "enter-guest-email": "Enter guest email",
+                "glitch-information": "Experience information",
+                "select-glitch-category": "Select experience category",
+                "select-a-glitch-category": "Select an experience category",
+                "close-glitch": "Close experience",
                 "room": "Room",
                 "submit-new-glitch": "Submit new glitch",
                 "compensation-cost": "Compensation cost",
@@ -12,15 +23,16 @@
                 "vip": "Vip",
                 "add-task": "Add task",
                 "choose-location": "Choose location",
-                "send-glitch": "Send glitch",
+                "send-glitch": "Send experience",
                 "actions-to-resolve": "Actions to resolve",
                 "incident-description": "Incident description",
                 "email": "Email",
+                "handover": "Handover",
                 "eur": "Eur"
             },
             "glitch-category-selector": {
-                "select-glitch": "Select glitch",
-                "select-glitch-category": "Select glitch category",
+                "select-glitch": "Select experience",
+                "select-glitch-category": "Select experience category",
                 "select-category": "Select category"
             }
         },
@@ -46,11 +58,25 @@
                 "new-note-placeholder": "Ex. task"
             }
         },
+        "glitches": {
+            "index": {
+                "assigned-glitches": "Assigned experiences",
+                "other-glitches": "Other experiences",
+                "recently-closed": "Recently closed"
+            }
+        },
         "glitch": {
             "glitch-read-only": {
                 "start": "Start",
                 "none": "None",
-                "send-email": "Send email"
+                "send-email": "Send email",
+                "assigned-to": "Assigned to",
+                "glitch-category": "Experience category",
+                "glitch-description": "Experience description",
+                "glitch-action": "Experience action",
+                "glitch-followup": "Experience followup",
+                "glitch-cost": "Experience cost",
+                "current-responsibility": "Current responsibility"
             }
         },
         "components": {
@@ -186,6 +212,12 @@
         }
     },
     "attendant": {
+        "alert": {
+            "index": {
+                "room-message": "Room message",
+                "priority": "Priority"
+            }
+        },
         "swipeoutoptions": {
             "index": {
                 "close": "Close"
@@ -430,6 +462,7 @@
         "ubiquitous": {
             "all": "All",
             "departed": "Departed",
+            "departure": "Departure",
             "photo": "Photo",
             "inspt": "Inspt",
             "assignee": "Assignee",
@@ -532,7 +565,6 @@
             "task": "Task",
             "clear": "Clear",
             "floor": "Floor",
-            "departure": "Due out",
             "clean": "Clean",
             "exit-selection": "Exit selection"
         },
