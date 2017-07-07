@@ -477,7 +477,7 @@
       "send": "Envoyer",
       "search-users": "Rechercher un utilisateur",
       "to": "a :",
-      "no-location": "Pas de lieu / pièce",
+      "no-location": "Pas de lieu",
       "location": "Lieu",
       "all-inspectors": "Tout(e)s les Gouvernant(e)s",
       "create-asset": "Créer un équipement",
@@ -593,11 +593,12 @@
     "tasktable": {
       "status": {
         "started": "Commencée",
-        "waiting": "En cours",
+        "waiting": "En attente",
         "rejected": "Rejetée",
         "paused": "Mise en pause",
         "canceled": "Annulée",
         "finished": "Finie",
+        "completed": "Finie",
         "pending": "En cours"
       },
       "header": {
@@ -1004,6 +1005,41 @@
     }
   },
   "maintenance": {
+    "filters": {
+      "index": {
+        "hide-all": "Tout cacher",
+        "reset": "Réinitialiser",
+        "search": "Rechercher des tâches",
+        "guest-status": "Statut client",
+        "vacant-rooms": "Chambres libres",
+        "occupied-rooms": "Chambres occupées",
+        "out-of-service": "Chambres hors service",
+        "departure-rooms": "Chambres en départ",
+        "arrival-rooms": "Chambres en arrivée",
+        "no-locations": "Tâches sans localisation",
+        "housekeeping": "Housekeeping",
+        "dirty-rooms": "Chambres sales",
+        "cleaned-rooms": "Chambres propres",
+        "inspected-rooms": "Chambres inspectées",
+        "pickup": "Chambres pick up",
+        "properties": "Propriétés",
+        "priority-tasks": "Tâches prioritaires",
+        "blocking-tasks": "Tâches bloquantes",
+        "no-asset-tasks": "Tâches sans équipement",
+        "planned-tasks": "Tâches planifiées",
+        "task-status": "Statut de la tâche",
+        "pending-tasks": "Tâches en attente",
+        "progressing-tasks": "Tâches en cours",
+        "paused-tasks": "Tâches en pause",
+        "completed-tasks": "Tâches terminées",
+        "rejected-tasks": "Tâches rejetées",
+        "assignment": "Assignation",
+        "assigned-to-me": "Mes tâches assignées",
+        "unassigned": "Tâches non assignées",
+        "assigned-to-others": "Autres assignations",
+        "return-to-tasks": "Revenir aux tâches"
+      }
+    },
     "createtask": {
       "assetactiondescription": {
         "there-are-no-actions-for-your-asset": "Il n'y a pas d'actions pour cet équipement",

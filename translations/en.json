@@ -598,6 +598,7 @@
         "paused": "Paused",
         "canceled": "Canceled",
         "finished": "Finished",
+        "completed": "Finished",
         "pending": "Pending"
       },
       "header": {
@@ -1004,6 +1005,41 @@
     }
   },
   "maintenance": {
+    "filters": {
+      "index": {
+        "hide-all": "Hide all",
+        "reset": "Reset",
+        "search": "Search tasks",
+        "guest-status": "Guest status",
+        "vacant-rooms": "Vacant rooms",
+        "occupied-rooms": "Occupied rooms",
+        "out-of-service": "Out of service rooms",
+        "departure-rooms": "Departure rooms",
+        "arrival-rooms": "Arrival rooms",
+        "no-locations": "Tasks without location",
+        "housekeeping": "Housekeeping",
+        "dirty-rooms": "Dirty rooms",
+        "cleaned-rooms": "Cleaned rooms",
+        "inspected-rooms": "Inspected rooms",
+        "pickup": "Pickup rooms",
+        "properties": "Properties",
+        "priority-tasks": "Priority tasks",
+        "blocking-tasks": "Blocking tasks",
+        "no-asset-tasks": "No asset tasks",
+        "planned-tasks": "Planned tasks",
+        "task-status": "Task status",
+        "pending-tasks": "Pending tasks",
+        "progressing-tasks": "Progressing tasks",
+        "paused-tasks": "Paused tasks",
+        "completed-tasks": "Completed tasks",
+        "rejected-tasks": "Rejected tasks",
+        "assignment": "Assignment",
+        "assigned-to-me": "Assigned to me",
+        "unassigned": "Unassigned tasks",
+        "assigned-to-others": "Assigned to others",
+        "return-to-tasks": "Return to tasks"
+      }
+    },
     "createtask": {
       "assetactiondescription": {
         "there-are-no-actions-for-your-asset": "There are no actions for your asset",
@@ -1107,6 +1143,7 @@
         "hotel-assets": "Hotel Assets",
         "create-task": "Create Task",
         "reassign-task": "Reassign Task",
+        "filters": "Task Filters",
         "sent-tasks": "Sent Tasks",
         "hotel-rooms": "Hotel Rooms",
         "asset": "Asset",
