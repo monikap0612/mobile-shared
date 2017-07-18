@@ -557,6 +557,7 @@
       "description": "Description",
       "normal": "Normal",
       "planned-attendant": "Femme de chambre planifiée",
+      "planned-runner": "Planned Runner",
       "update": "Mise à jour",
       "alert": "Alerte",
       "arrived": "Arrivée",
@@ -566,7 +567,9 @@
       "floor": "Etage",
       "departure": "En départ",
       "clean": "Propre",
-      "exit-selection": "Fermer"
+      "exit-selection": "Fermer",
+      "tap-to-start-camera": "Toucher pour photographier",
+      "continue-without-photo": "Continuer sans photo"
     },
     "realtime": {
       "index": {
@@ -1054,6 +1057,10 @@
         "close": "Fermer",
         "search-assets": "Chercher un équipement",
         "select-asset": "Sélectionnez un équipement"
+      },
+      "assignment": {
+        "search-assignments": "Search users, groups...",
+        "missing-assignment": "missing assignment"
       }
     },
     "reassigntask": {

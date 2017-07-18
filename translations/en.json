@@ -557,6 +557,7 @@
       "description": "Description",
       "normal": "Normal",
       "planned-attendant": "Planned Attendant",
+      "planned-runner": "Planned Runner",
       "update": "Update",
       "alert": "Alert",
       "arrived": "Arrived",
@@ -566,7 +567,9 @@
       "floor": "Floor",
       "departure": "Departure",
       "clean": "Clean",
-      "exit-selection": "Exit selection"
+      "exit-selection": "Exit selection",
+      "tap-to-start-camera": "Tap to start camera",
+      "continue-without-photo": "Continue without photo"
     },
     "realtime": {
       "index": {
@@ -1054,6 +1057,10 @@
         "close": "Close",
         "search-assets": "Search assets",
         "select-asset": "Select asset"
+      },
+      "assignment": {
+        "search-assignments": "Search users, groups...",
+        "missing-assignment": "missing assignment"
       }
     },
     "reassigntask": {
