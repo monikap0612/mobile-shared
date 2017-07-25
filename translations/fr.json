@@ -569,7 +569,9 @@
       "clean": "Propre",
       "exit-selection": "Fermer",
       "tap-to-start-camera": "Toucher pour photographier",
-      "continue-without-photo": "Continuer sans photo"
+      "continue-without-photo": "Continuer sans photo",
+      "default-assignment": "Assignation par défaut",
+      "tap-to-continue": "Toucher pour continuer"
     },
     "realtime": {
       "index": {

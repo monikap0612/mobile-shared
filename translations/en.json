@@ -569,7 +569,9 @@
       "clean": "Clean",
       "exit-selection": "Exit selection",
       "tap-to-start-camera": "Tap to start camera",
-      "continue-without-photo": "Continue without photo"
+      "continue-without-photo": "Continue without photo",
+      "default-assignment": "Default assignment",
+      "tap-to-continue": "Tap to continue"
     },
     "realtime": {
       "index": {
