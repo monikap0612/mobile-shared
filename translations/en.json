@@ -81,7 +81,8 @@
         "assigned-to": "Assigned to",
         "current-responsibility": "Current responsibility",
         "glitch-action": "Experience action",
-        "glitch-category": "Experience category"
+        "glitch-category": "Experience category",
+        "change-category": "Change category"
       }
     },
     "components": {
@@ -197,7 +198,7 @@
     },
     "navigation": {
       "links": {
-        "glitches": "Glitches",
+        "glitches": "Experiences",
         "tasks": "Tasks",
         "inventory-restock": "Restock inventory",
         "notifications": "Notifications",
