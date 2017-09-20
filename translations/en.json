@@ -1011,6 +1011,15 @@
     }
   },
   "maintenance": {
+    "on-duty": {
+      "index": {
+        "you-are-currently": "You are currently",
+        "on-duty": "On Duty",
+        "off-duty": "Off Duty",
+        "tap-go-on": "Tap to go on duty",
+        "tap-go-off": "Tap to go off duty"
+      }
+    },
     "filters": {
       "index": {
         "hide-all": "Hide all",
@@ -1157,7 +1166,8 @@
         "sent-tasks": "Sent Tasks",
         "hotel-rooms": "Hotel Rooms",
         "asset": "Asset",
-        "action": "Action"
+        "action": "Action",
+        "on-duty": "On Duty"
       },
       "links": {
         "assets": "Assets",
