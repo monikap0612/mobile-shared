@@ -572,7 +572,8 @@
       "tap-to-start-camera": "Tap to start camera",
       "continue-without-photo": "Continue without photo",
       "default-assignment": "Default assignment",
-      "tap-to-continue": "Tap to continue"
+      "tap-to-continue": "Tap to continue",
+      "management": "Management"
     },
     "realtime": {
       "index": {
@@ -869,7 +870,11 @@
         "open-housekeepings": "Open housekeepings",
         "open-maintenances": "Open maintenances",
         "recently-closed-tasks": "Recently closed tasks",
-        "open-tasks": "Open tasks"
+        "open-tasks": "Open tasks",
+        "paused-audits": "Paused audits",
+        "open-audits": "Open audits",
+        "recently-closed-audits": "Recently closed audits",
+        "start-new-audit": "Start new audit"
       }
     },
     "founditem": {
@@ -943,7 +948,8 @@
         "catalog": "Catalog",
         "lost-found": "Lost & found",
         "image-about-how-the-room-should-look": "Image about how the room should look",
-        "questionnaires": "Questionnaires"
+        "questionnaires": "Questionnaires",
+        "audits": "Audits"
       }
     },
     "playground": {
@@ -982,7 +988,12 @@
         "planning": "Planning",
         "maintenance": "Maintenance",
         "main": "Main",
-        "history": "History"
+        "history": "History",
+        "turndown-service": "Turndown Service",
+        "audits": "Audits",
+        "audit": "Audit",
+        "create-audit": "Create Audit",
+        "show-audit": "Show Audit"
       }
     },
     "maintenance": {
@@ -1167,7 +1178,9 @@
         "hotel-rooms": "Hotel Rooms",
         "asset": "Asset",
         "action": "Action",
-        "on-duty": "On Duty"
+        "on-duty": "On Duty",
+        "turndown-service": "Turndown Service",
+        "audits": "Audits"
       },
       "links": {
         "assets": "Assets",
@@ -1175,7 +1188,10 @@
         "rooms": "Rooms",
         "closed": "Closed",
         "main": "Main",
-        "sent": "Sent"
+        "sent": "Sent",
+        "turndown-service": "Turndown Service",
+        "audits": "Audits",
+        "create-audit": "Create Audit"
       }
     },
     "rooms": {
