@@ -573,7 +573,8 @@
       "continue-without-photo": "Continue without photo",
       "default-assignment": "Default assignment",
       "tap-to-continue": "Tap to continue",
-      "management": "Management"
+      "management": "Management",
+      "front-office": "Front Office"
     },
     "realtime": {
       "index": {
