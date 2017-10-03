@@ -399,7 +399,9 @@
         "tasks": "tasks",
         "floor": "Floor",
         "paused-rooms": "Paused rooms",
+        "cleaning-rooms": "Cleaning rooms",
         "paused": "Paused",
+        "cleaning": "Cleaning",
         "priority-rooms": "Priority rooms",
         "close-floor": "Close floor",
         "rooms": "Rooms"
