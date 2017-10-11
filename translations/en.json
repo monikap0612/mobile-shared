@@ -576,7 +576,8 @@
       "default-assignment": "Default assignment",
       "tap-to-continue": "Tap to continue",
       "management": "Management",
-      "front-office": "Front Office"
+      "front-office": "Front Office",
+      "review": "Review"
     },
     "realtime": {
       "index": {
@@ -723,6 +724,14 @@
     }
   },
   "inspector": {
+    "audits": {
+      "add-photo": "Add photo",
+      "add-note": "Add note",
+      "submit-task": "Submit task",
+      "save": "Save",
+      "note": "Note",
+      "photo": "Photo"
+    },
     "attendantmodal": {
       "index": {
         "priority": "Priority",

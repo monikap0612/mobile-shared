@@ -571,7 +571,8 @@
       "tap-to-start-camera": "Toucher pour photographier",
       "continue-without-photo": "Continuer sans photo",
       "default-assignment": "Assignation par défaut",
-      "tap-to-continue": "Toucher pour continuer"
+      "tap-to-continue": "Toucher pour continuer",
+      "review": "Voir"
     },
     "realtime": {
       "index": {
@@ -868,7 +869,11 @@
         "open-housekeepings": "Ouvrir les tâches HK",
         "open-maintenances": "Ouvrir les tâches de maintenance",
         "recently-closed-tasks": "Tâches récemment fermées",
-        "open-tasks": "Tâches ouvertes"
+        "open-tasks": "Tâches ouvertes",
+        "paused-audits": "Audits en pause",
+        "open-audits": "Ouvrir les audits",
+        "recently-closed-audits": "Audits récements fermés",
+        "start-new-audit": "Commencer un nouvel audit"
       }
     },
     "founditem": {
