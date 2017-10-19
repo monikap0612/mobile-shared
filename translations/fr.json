@@ -237,6 +237,7 @@
         "credits": "Crédits",
         "pms": "PMS",
         "change-sheets": "Changement de draps",
+        "long-stay": "Long Stay",
         "cleaning-info": "Information de Nettoyage"
       },
       "taskssubheader": {
@@ -276,6 +277,7 @@
       "cleaninginfo": {
         "credits": "Crédits",
         "change-sheets": "Changement de draps",
+        "long-stay": "Long Stay",
         "pms": "PMS"
       },
       "taskssubheader": {
@@ -599,13 +601,13 @@
     "tasktable": {
       "status": {
         "started": "Commencée",
-        "waiting": "En attente",
+        "waiting": "Acceptée",
         "rejected": "Rejetée",
         "paused": "Mise en pause",
         "canceled": "Annulée",
         "finished": "Finie",
         "completed": "Finie",
-        "pending": "En cours"
+        "pending": "En attente"
       },
       "header": {
         "status": "Statut",
@@ -709,7 +711,7 @@
         "unclaimed": "En attente",
         "cancelled": "Annulée",
         "accepted": "Acceptée",
-        "pending": "En cours"
+        "pending": "En attente"
       }
     },
     "swipeoutoptions": {
@@ -902,8 +904,8 @@
         "rejected": "Rejetée",
         "paused": "Mise en pause",
         "canceled": "Annulée",
-        "waiting": "En attente",
-        "pending": "En cours"
+        "waiting": "Acceptée",
+        "pending": "En attente"
       },
       "index": {
         "sent-attendant-notifications": "Notifications envoyées",

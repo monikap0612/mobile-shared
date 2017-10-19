@@ -238,6 +238,7 @@
         "credits": "Credits",
         "pms": "Pms",
         "change-sheets": "Change sheets",
+        "long-stay": "Long Stay",
         "cleaning-info": "Cleaning Info"
       },
       "taskssubheader": {
@@ -277,6 +278,7 @@
       "cleaninginfo": {
         "credits": "Credits",
         "change-sheets": "Change sheets",
+        "long-stay": "Long Stay",
         "pms": "Pms"
       },
       "taskssubheader": {
