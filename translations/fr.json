@@ -505,7 +505,7 @@
       "resume": "Reprendre",
       "select-user": "Sélectionner un utilisateur",
       "attendant": "Femme / Valet de chambre",
-      "stay": "REC",
+      "stay": "Rec",
       "optional": "Option",
       "convert": "Convertir",
       "housekeeping": "Housekeeping",
@@ -869,6 +869,7 @@
         "tasks": "Tâches",
         "my-assigned-tasks": "Mes tâches",
         "open-housekeepings": "Ouvrir les tâches HK",
+        "open": "Ouvrir les tâches tasks",
         "open-maintenances": "Ouvrir les tâches de maintenance",
         "recently-closed-tasks": "Tâches récemment fermées",
         "open-tasks": "Tâches ouvertes",
@@ -988,7 +989,9 @@
         "planning": "Attribution",
         "maintenance": "Maintenance",
         "main": "Ecran principal",
-        "history": "Historique"
+        "history": "Historique",
+        "lost-found": "Objets trouvés",
+        "experiences": "Expérience Client"
       }
     },
     "maintenance": {

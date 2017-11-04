@@ -129,7 +129,7 @@
         "room-gallery": "Room gallery",
         "send-task": "Send task",
         "clean-room": "Clean room",
-        "guest-glitch": "Guest glitch",
+        "guest-glitch": "Experience",
         "hsk-notes": "Hsk notes",
         "lost-found": "Lost & found",
         "inventory": "Inventory",
@@ -579,7 +579,12 @@
       "tap-to-continue": "Tap to continue",
       "management": "Management",
       "front-office": "Front Office",
-      "review": "Review"
+      "review": "Review",
+      "nos": "Nos",
+      "blk": "Blk",
+      "lc": "LC",
+      "sc": "SC",
+      "dc": "DC"
     },
     "realtime": {
       "index": {
@@ -726,6 +731,17 @@
     }
   },
   "inspector": {
+    "lost-found": {
+      "index": {
+        "today": "Today",
+        "description": "Description",
+        "reference": "Reference",
+        "category": "Category",
+        "guest": "Guest",
+        "location": "Location",
+        "found-by": "Found By"
+      }
+    },
     "audits": {
       "add-photo": "Add photo",
       "add-note": "Add note",
@@ -883,6 +899,7 @@
         "my-assigned-tasks": "My assigned tasks",
         "open-housekeepings": "Open housekeepings",
         "open-maintenances": "Open maintenances",
+        "open": "Open tasks",
         "recently-closed-tasks": "Recently closed tasks",
         "open-tasks": "Open tasks",
         "paused-audits": "Paused audits",
@@ -1007,7 +1024,9 @@
         "audits": "Audits",
         "audit": "Audit",
         "create-audit": "Create Audit",
-        "show-audit": "Show Audit"
+        "show-audit": "Show Audit",
+        "lost-found": "Lost & Found",
+        "experiences": "Experiences"
       }
     },
     "maintenance": {
