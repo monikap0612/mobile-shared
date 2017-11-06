@@ -584,7 +584,9 @@
       "blk": "Blk",
       "lc": "LC",
       "sc": "SC",
-      "dc": "DC"
+      "dc": "DC",
+      "dismiss": "Dismiss",
+      "show": "Show"
     },
     "realtime": {
       "index": {
@@ -609,6 +611,17 @@
       }
     },
     "tasktable": {
+      "modal": {
+        "assigned-to": "Assigned to",
+        "last-action": "Last action",
+        "messages": "Messages",
+        "location": "Location",
+        "created-by": "Created by",
+        "submitted-time": "Submitted time",
+        "complete-task": "Complete task",
+        "cancel-task": "Cancel task",
+        "reassign-task": "Reassign task"
+      },
       "status": {
         "started": "Started",
         "waiting": "Waiting",
@@ -873,7 +886,16 @@
         "new": "New",
         "dismiss": "Dismiss",
         "you-have": "You have",
-        "show": "Show"
+        "show": "Show",
+        "new-updates": "new update(s)"
+      },
+      "modal": {
+        "priority-set": "Priority set",
+        "message-added": "Message added",
+        "room-restocked": "Room restocked",
+        "room-unblocked": "Room unblocked",
+        "updates": "Updates",
+        "dismiss-all": "Dismiss all"
       }
     },
     "createnotification": {
@@ -910,6 +932,7 @@
     },
     "founditem": {
       "index": {
+        "add-a-description": "Add a description",
         "submit-lost-item": "Submit lost item"
       }
     },

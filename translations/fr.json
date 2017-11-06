@@ -574,7 +574,9 @@
       "continue-without-photo": "Continuer sans photo",
       "default-assignment": "Assignation par défaut",
       "tap-to-continue": "Toucher pour continuer",
-      "review": "Voir"
+      "review": "Voir",
+      "dismiss": "Masquer",
+      "show": "Afficher"
     },
     "realtime": {
       "index": {
@@ -599,6 +601,17 @@
       }
     },
     "tasktable": {
+      "modal": {
+        "assigned-to": "Assignée à",
+        "last-action": "Dernière action",
+        "messages": "Messages",
+        "location": "Lieu",
+        "created-by": "Créée par",
+        "submitted-time": "Créée depuis",
+        "complete-task": "Terminer",
+        "cancel-task": "Annuler",
+        "reassign-task": "Réassigner"
+      },
       "status": {
         "started": "Commencée",
         "waiting": "Acceptée",
@@ -842,9 +855,18 @@
     "updatespopup": {
       "index": {
         "new": "Nouveau",
-        "dismiss": "Annuler",
-        "you-have": "Vous avez",
-        "show": "Montrer"
+        "dismiss": "Ignorer",
+        "you-have": "Nouvelle information",
+        "show": "Afficher",
+        "new-updates": ""
+      },
+      "modal": {
+        "priority-set": "Priorité Validée",
+        "message-added": "Message ajouté",
+        "room-restocked": "Réassort fait",
+        "room-unblocked": "Chambre débloquée",
+        "updates": "Nouvelles informations",
+        "dismiss-all": "Ignorer tout"
       }
     },
     "createnotification": {
@@ -881,6 +903,7 @@
     },
     "founditem": {
       "index": {
+        "add-a-description": "Ajouter une description",
         "submit-lost-item": "Soumettre l'objet"
       }
     },
