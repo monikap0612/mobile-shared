@@ -407,6 +407,9 @@
         "priority-rooms": "Priority rooms",
         "close-floor": "Close floor",
         "rooms": "Rooms",
+        "scheduled": "Scheduled Rooms",
+        "show-more": "Show all rooms",
+        "show-less": "Limit to scheduled rooms",
         "credits": "Credits"
       }
     },
