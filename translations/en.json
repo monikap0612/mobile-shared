@@ -759,6 +759,28 @@
         "found-by": "Found By"
       }
     },
+    "room-messages": {
+      "index": {
+        "day-night": "Day & Night",
+        "edit": "Edit",
+        "add-message": "Add message",
+        "delete-messages": "Delete Message(s)",
+        "change-room": "Change room",
+        "message": "Message",
+        "message-type": "Select the type of message",
+        "schedule": "Schedule",
+        "calendar": "Calendar",
+        "day": "Day",
+        "night": "Night",
+        "pickup": "Pickup",
+        "end-of-day": "End of day",
+        "end-of-stay": "End of stay",
+        "custom": "Custom",
+        "indefinitely": "Indefinitely",
+        "cancel": "Cancel",
+        "submit-message": "Submit message"
+      }
+    },
     "audits": {
       "add-photo": "Add photo",
       "add-note": "Add note",
