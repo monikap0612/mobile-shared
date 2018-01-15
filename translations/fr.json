@@ -735,6 +735,28 @@
     }
   },
   "inspector": {
+    "room-messages": {
+      "index": {
+        "day-night": "Jour et Couverture",
+        "edit": "Modifier",
+        "add-message": "Nouveau",
+        "delete-messages": "Effacer le(s) message(s)",
+        "change-room": "Déplacer vers # n°",
+        "message": "Message",
+        "message-type": "Select the type of message",
+        "schedule": "Sélectionner un type de message",
+        "calendar": "Calendrier",
+        "day": "Jour",
+        "night": "Couverture",
+        "pickup": "Pickup",
+        "end-of-day": "Aujourd’hui",
+        "end-of-stay": "Jusqu’au départ",
+        "custom": "Personnalisé",
+        "indefinitely": "Indéfiniment",
+        "cancel": "Annuler",
+        "submit-message": "Soumettre"
+      }
+    },
     "attendantmodal": {
       "index": {
         "priority": "Priorité",
