@@ -17,7 +17,7 @@
         "send-glitch": "Send experience",
         "email": "Email",
         "eur": "Eur",
-        "submit-new-glitch": "Submit new glitch",
+        "submit-new-glitch": "Submit new experience",
         "compensation-cost": "Compensation cost",
         "update-glitch": "Update experience",
         "guest-information": "Guest Information",
@@ -203,6 +203,9 @@
         "inventory-restock": "Restock inventory",
         "notifications": "Notifications",
         "turndown-service": "Turndown service",
+        "audits": "Audits",
+        "audit": "Audit",
+        "create-audit": "Create Audit",
         "main": "Main"
       }
     },
@@ -437,9 +440,9 @@
         "incident-description": "Incident description",
         "name": "Name",
         "room": "Room",
-        "submit-new-glitch": "Submit new glitch",
+        "submit-new-glitch": "Submit new experience",
         "compensation-cost": "Compensation cost",
-        "select-glitch-category": "Select glitch category",
+        "select-glitch-category": "Select experience category",
         "enter-guest-name": "Enter Guest Name",
         "enter-room-number": "Enter Room Number",
         "vip": "Vip",
@@ -450,8 +453,8 @@
         "enter-guest-email": "Enter Guest Email"
       },
       "glitch-category-selector": {
-        "select-glitch": "Select glitch",
-        "select-glitch-category": "Select glitch category",
+        "select-glitch": "Select experience",
+        "select-glitch-category": "Select experience category",
         "select-category": "Select category"
       }
     },
@@ -700,6 +703,9 @@
       },
       "fullscreenphoto": {
         "no-photo": "No Photo"
+      },
+      "selectassignmentmodal": {
+        "select-assignment": "Select assignment"
       }
     },
     "navigation": {
@@ -787,7 +793,8 @@
       "submit-task": "Submit task",
       "save": "Save",
       "note": "Note",
-      "photo": "Photo"
+      "photo": "Photo",
+      "select-audit": "Select audit"
     },
     "attendantmodal": {
       "index": {
