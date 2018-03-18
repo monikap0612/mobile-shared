@@ -420,6 +420,7 @@
       "links": {
         "tasks": "Tasks",
         "main": "Main",
+        "sent": "Sent",
         "glitches": "Glitches",
         "inventory-restock": "Inventory restock",
         "notifications": "Notifications"
