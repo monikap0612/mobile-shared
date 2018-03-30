@@ -420,6 +420,7 @@
       "links": {
         "tasks": "Tasks",
         "main": "Main",
+        "sent": "Sent",
         "glitches": "Glitches",
         "inventory-restock": "Inventory restock",
         "notifications": "Notifications"
@@ -456,6 +457,20 @@
         "select-glitch": "Select experience",
         "select-glitch-category": "Select experience category",
         "select-category": "Select category"
+      }
+    },
+    "lost-found-review": {
+      "index": {
+        "open": "Open",
+        "emailed": "Emailed",
+        "phoned": "Phoned",
+        "pending": "Pending guest",
+        "waiting": "Contacted and waiting",
+        "mailed": "Mailed",
+        "hand-delivered": "Hand delivered",
+        "expired": "Expired",
+        "refused": "Refused",
+        "delete": "Delete"
       }
     },
     "popup": {
@@ -1074,6 +1089,7 @@
         "notifications": "Notifications",
         "planning": "Planning",
         "maintenance": "Maintenance",
+        "maintenances": "Maintenances",
         "main": "Main",
         "history": "History",
         "turndown-service": "Turndown Service",
