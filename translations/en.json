@@ -28,7 +28,9 @@
         "name": "Name",
         "select-a-glitch-category": "Select an experience category",
         "actions-to-resolve": "Actions to resolve",
-        "enter-guest-email": "Enter guest email"
+        "enter-guest-email": "Enter guest email",
+        "mark-as-closed": "Mark as closed",
+        "claim-glitch": "Claim experience"
       },
       "glitch-category-selector": {
         "select-glitch": "Select experience",
@@ -421,7 +423,7 @@
         "tasks": "Tasks",
         "main": "Main",
         "sent": "Sent",
-        "glitches": "Glitches",
+        "glitches": "Experiences",
         "inventory-restock": "Inventory restock",
         "notifications": "Notifications"
       }
@@ -435,9 +437,12 @@
     }
   },
   "base": {
+    "extra-options": {
+      "room-extra-options": "Room extra options"
+    },
     "glitch-form": {
       "index": {
-        "glitch-information": "Glitch information",
+        "glitch-information": "Experience information",
         "incident-description": "Incident description",
         "name": "Name",
         "room": "Room",
@@ -459,6 +464,11 @@
         "select-category": "Select category"
       }
     },
+    "experiences": {
+      "index": {
+        "pending": "Pending experiences"
+      }
+    },
     "lost-found-review": {
       "index": {
         "open": "Open",
@@ -470,7 +480,13 @@
         "hand-delivered": "Hand delivered",
         "expired": "Expired",
         "refused": "Refused",
-        "delete": "Delete"
+        "delete": "Delete",
+        "closed": "Closed"
+      },
+      "modal": {
+        "guest-signature-optional": "Guest signature (optional)",
+        "notes-optional": "Notes (optional)",
+        "added-photos-optional": "Added photos (optional)"
       }
     },
     "popup": {
@@ -608,7 +624,13 @@
       "sc": "SC",
       "dc": "DC",
       "dismiss": "Dismiss",
-      "show": "Show"
+      "show": "Show",
+      "checkout-on": "Checkout on",
+      "cleaning": "Cleaning",
+      "dnd": "DND",
+      "refuse": "Refused",
+      "reset-system": "Reset",
+      "bedrooms": "Bedrooms"
     },
     "realtime": {
       "index": {
@@ -672,6 +694,12 @@
         "start": "Start",
         "resume": "Resume",
         "reject": "Reject"
+      },
+      "lastaction": {
+        "created": "Created",
+        "task-reassigned": "Reassigned",
+        "rescheduled": "Rescheduled",
+        "added-message": "Added message"
       }
     },
     "notifications": {
@@ -848,7 +876,9 @@
         "other": "Other",
         "floors": "Floors",
         "filters": "Filters",
-        "all-rooms": "All rooms"
+        "all-rooms": "All rooms",
+        "show-non-guest-rooms": "Show non-guest rooms",
+        "hide-non-guest-rooms": "Hide non-guest rooms"
       },
       "rooms-information": {
         "reset": "Reset",
@@ -1204,7 +1234,7 @@
       "index": {
         "okay": "Okay",
         "submitted-time": "Submitted time",
-        "new-glitch": "New glitch",
+        "new-glitch": "New experience",
         "accept": "Accept",
         "new-task": "New task",
         "location": "Location",
