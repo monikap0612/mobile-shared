@@ -837,7 +837,8 @@
       "save": "Save",
       "note": "Note",
       "photo": "Photo",
-      "select-audit": "Select audit"
+      "select-audit": "Select audit",
+      "assign-to-others": "Assign to others (optional)"
     },
     "attendantmodal": {
       "index": {
