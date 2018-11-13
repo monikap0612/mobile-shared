@@ -54,7 +54,8 @@
       "index": {
         "confirm-dnd": "Confirm dnd",
         "change-sheets": "Change sheets",
-        "pms": "Pms"
+        "pms": "Pms",
+        "add-change-sheets": "Add Change Sheets"
       }
     },
     "room": {
@@ -208,6 +209,8 @@
         "audits": "Audits",
         "audit": "Audit",
         "create-audit": "Create Audit",
+        "checklists": "Checklists",
+        "checklist": "Checklist",
         "main": "Main"
       }
     },
@@ -250,6 +253,9 @@
         "show-tasks": "Show tasks",
         "tasks": "Tasks",
         "hide-tasks": "Hide tasks"
+      },
+      "index": {
+        "add-change-sheets": "Add Change Sheets"
       }
     },
     "popuptasks": {
@@ -630,7 +636,9 @@
       "dnd": "DND",
       "refuse": "Refused",
       "reset-system": "Reset",
-      "bedrooms": "Bedrooms"
+      "bedrooms": "Bedrooms",
+      "properties": "Properties",
+      "area": "Area"
     },
     "realtime": {
       "index": {
