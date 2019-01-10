@@ -229,6 +229,7 @@
     "clean": {
       "menu": {
         "dnd": "DND",
+        "voucher": "Voucher",
         "refuse": "Refuse",
         "inspect": "Inspect Room",
         "start-cleaning": "Start Cleaning",
@@ -676,6 +677,7 @@
       },
       "status": {
         "started": "Started",
+        "claimed": "Waiting",
         "waiting": "Waiting",
         "rejected": "Rejected",
         "paused": "Paused",
