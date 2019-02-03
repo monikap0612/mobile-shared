@@ -52,7 +52,8 @@
       "index": {
         "confirm-dnd": "Confirmer le Ne pas deranger",
         "change-sheets": "Changement de draps",
-        "pms": "PMS"
+        "pms": "PMS",
+        "add-change-sheets": "J’ai dû changer les draps"
       }
     },
     "room": {
@@ -102,8 +103,8 @@
       "task-card": {
         "created-by": "Créée par",
         "location": "Lieu / pièce",
-        "last-message": "Dernier message",
-        "submitted-time": "Créée depuis"
+        "last-message": "Message",
+        "submitted-time": "Créée"
       },
       "special-select-row": {
         "text": "Texte"
@@ -475,14 +476,14 @@
     "popup": {
       "index": {
         "okay": "Ok",
-        "submitted-time": "Créée depuis",
+        "submitted-time": "Créée",
         "notification": "Notification",
         "accept": "Accepter",
         "new-task": "Nouvelle tâche",
         "location": "Lieu",
         "reject": "Rejeter",
         "created-by": "Créée par",
-        "last-message": "Dernier message"
+        "last-message": "Message"
       }
     },
     "ubiquitous": {
@@ -524,7 +525,7 @@
       "close": "Fermer",
       "mandatory-task": "Tâche obligatoire",
       "yesterday": "Hier",
-      "last-message": "Dernier message",
+      "last-message": "Message",
       "arrival": "En arrivée",
       "resume": "Reprendre",
       "select-user": "Sélectionner un utilisateur",
@@ -638,7 +639,7 @@
         "messages": "Messages",
         "location": "Lieu",
         "created-by": "Créée par",
-        "submitted-time": "Créée depuis",
+        "submitted-time": "Créée",
         "complete-task": "Terminer",
         "cancel-task": "Annuler",
         "reassign-task": "Réassigner"
@@ -660,7 +661,7 @@
         "normal-ticket": "Ticket normal",
         "lite-ticket": "Ticket à compléter",
         "assigned": "Assignation",
-        "time-created": "Créée depuis",
+        "time-created": "Créée",
         "location": "Lieu",
         "created-by": "Créée par",
         "priority-ticket": "Ticket prioritaire"
@@ -874,7 +875,7 @@
         "location": "Lieu / pièce",
         "reject": "Rejeter",
         "created-by": "Créé(e) par",
-        "last-message": "Dernier message"
+        "last-message": "Message"
       }
     },
     "information": {
@@ -1175,14 +1176,14 @@
     "popup": {
       "index": {
         "okay": "Ok",
-        "submitted-time": "Créé(e) depuis",
+        "submitted-time": "Créée",
         "new-glitch": "Nouvelle experience",
         "accept": "Accepter",
         "new-task": "Nouvelle tâche",
         "location": "Lieu / Pièce",
         "reject": "Rejeter",
         "created-by": "Créé(e) par",
-        "last-message": "Dernier message"
+        "last-message": "Message"
       }
     },
     "assetmodel": {
@@ -1212,7 +1213,7 @@
         "guest-status": "Informations Chambre",
         "normal": "Ticket normal",
         "messages": "Messages",
-        "start-date": "Créée depuis",
+        "start-date": "Créée",
         "priority": "Ticket prioritaire",
         "reassign-ticket": "Reassigner",
         "unassigned": "Ticket non vu",

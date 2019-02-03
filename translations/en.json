@@ -432,7 +432,8 @@
         "sent": "Sent",
         "glitches": "Experiences",
         "inventory-restock": "Inventory restock",
-        "notifications": "Notifications"
+        "notifications": "Notifications",
+        "plannings": "Plannings"
       }
     },
     "lostfound": {
@@ -506,7 +507,8 @@
         "location": "Location",
         "reject": "Reject",
         "created-by": "Created by",
-        "last-message": "Last message"
+        "last-message": "Last message",
+        "assigned-audit": "Assigned audit"
       }
     },
     "ubiquitous": {
@@ -554,6 +556,7 @@
       "select-user": "Select user",
       "attendant": "Attendant",
       "stay": "Stay",
+      "vacant": "Vacant",
       "optional": "optional",
       "convert": "Convert",
       "housekeeping": "Housekeeping",
@@ -579,6 +582,7 @@
       "none": "None",
       "room": "Room",
       "dep": "Dep",
+      "vac": "Vac",
       "priority-task": "Priority task",
       "enter-a-description-optional": "Enter a description (optional)...",
       "dirty": "Dirty",
@@ -594,7 +598,6 @@
       "receptionist": "Receptionist",
       "inspector": "Inspector",
       "occupied": "Occupied",
-      "vacant": "Vacant",
       "information": "Information",
       "adminstrator": "Administrator",
       "no": "No",
@@ -639,7 +642,9 @@
       "reset-system": "Reset",
       "bedrooms": "Bedrooms",
       "properties": "Properties",
-      "area": "Area"
+      "area": "Area",
+      "asset": "Asset",
+      "action": "Action"
     },
     "realtime": {
       "index": {
@@ -931,7 +936,8 @@
         "location": "Location",
         "reject": "Reject",
         "created-by": "Created by",
-        "last-message": "Last message"
+        "last-message": "Last message",
+        "assigned-audit": "Assigned audit"
       }
     },
     "information": {
@@ -1251,7 +1257,8 @@
         "location": "Location",
         "reject": "Reject",
         "created-by": "Created by",
-        "last-message": "Last message"
+        "last-message": "Last message",
+        "assigned-audit": "Assigned audit"
       }
     },
     "assetmodel": {
