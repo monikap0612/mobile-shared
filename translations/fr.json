@@ -245,6 +245,9 @@
         "show-tasks": "Affiche les tâches",
         "tasks": "Tâches",
         "hide-tasks": "Masque les tâches"
+      },
+      "index": {
+        "add-change-sheets": "J’ai dû changer les draps"
       }
     },
     "popuptasks": {
@@ -483,7 +486,8 @@
         "location": "Lieu",
         "reject": "Rejeter",
         "created-by": "Créée par",
-        "last-message": "Message"
+        "last-message": "Message",
+        "assigned-audit": "Audit assigné"
       }
     },
     "ubiquitous": {
@@ -558,6 +562,9 @@
       "bedrooms": "Chambres",
       "dep": "DEP",
       "priority-task": "Tâche Prioritaire",
+      "lite-task": "Tâche lite",
+      "normal-task": "Tâche normale",
+      "unassigned-task": "Tâche non assignée",
       "enter-a-description-optional": "Entrez une description (optionnel)",
       "dirty": "Sale",
       "cancelled": "Annulée",
@@ -608,7 +615,14 @@
       "dnd": "DND",
       "refuse": "Refusé",
       "reset-system": "Effacer",
-      "management": "Encadrement"
+      "management": "Encadrement",
+      "properties": "Propriétés",
+      "area": "Area",
+      "asset": "Equipement",
+      "action": "Action",
+      "guest": "Client",
+      "due-out": "Départ le",
+      "tap-to-enlarge": "Toucher pour agrandir"
     },
     "realtime": {
       "index": {
@@ -793,6 +807,16 @@
         "cancel": "Annuler",
         "submit-message": "Soumettre"
       }
+    },
+    "audits": {
+      "add-photo": "Ajouter une photo",
+      "add-note": "Ajouter une note",
+      "submit-task": "Soumettre",
+      "save": "Sauver",
+      "note": "Note",
+      "photo": "Photo",
+      "select-audit": "Select audit",
+      "assign-to-others": "Assigner à ... (optionnel)"
     },
     "attendantmodal": {
       "index": {
@@ -1219,7 +1243,12 @@
         "unassigned": "Ticket non vu",
         "lite": "Ticket à compléter",
         "model": "Modèle",
-        "created-by": "Créée par"
+        "created-by": "Créée par",
+        "view-additional-photos": "Photos additionnelles",
+        "view-attachments": "Doc attaché à l'équipment",
+        "location-information": "Information lieu",
+        "reassign-task": "Reassignation",
+        "move-to-departure": "Reassigner au depart"
       }
     },
     "asset": {

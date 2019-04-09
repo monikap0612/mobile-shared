@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Provider, connect } from 'react-redux';
 import { Container, Header, Title, Content, Button, Icon, Spinner, List, ListItem, Text, H2, H3, View } from 'native-base';
 import { NetInfo } from 'react-native';
+// import NetInfo from "@react-native-community/netinfo";
 import { createStructuredSelector } from 'reselect';
 import NativeTachyons, {styles as s} from 'react-native-style-tachyons';
 

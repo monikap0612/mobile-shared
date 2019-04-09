@@ -584,6 +584,9 @@
       "dep": "Dep",
       "vac": "Vac",
       "priority-task": "Priority task",
+      "lite-task": "Priority task",
+      "normal-task": "Priority task",
+      "unassigned-task": "Priority task",
       "enter-a-description-optional": "Enter a description (optional)...",
       "dirty": "Dirty",
       "cancelled": "Canceled",
@@ -644,7 +647,10 @@
       "properties": "Properties",
       "area": "Area",
       "asset": "Asset",
-      "action": "Action"
+      "action": "Action",
+      "guest": "Guest",
+      "due-out": "Due out",
+      "tap-to-enlarge": "Tap to enlarge"
     },
     "realtime": {
       "index": {
@@ -1294,7 +1300,12 @@
         "unassigned": "Unassigned ticket",
         "lite": "Lite ticket",
         "model": "Model",
-        "created-by": "Created by"
+        "created-by": "Created by",
+        "view-additional-photos": "View additional photos",
+        "view-attachments": "View attachments",
+        "location-information": "Location information",
+        "reassign-task": "Reassign task",
+        "move-to-departure": "Move to departure"
       }
     },
     "asset": {
