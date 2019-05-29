@@ -489,7 +489,10 @@
         "expired": "Expired",
         "refused": "Refused",
         "delete": "Delete",
-        "closed": "Closed"
+        "closed": "Closed",
+        "found": "Found",
+        "show-all": "Show all",
+        "show-only-open": "Show only open"
       },
       "modal": {
         "guest-signature-optional": "Guest signature (optional)",
@@ -648,6 +651,7 @@
       "area": "Area",
       "asset": "Asset",
       "action": "Action",
+      "model": "Model",
       "guest": "Guest",
       "due-out": "Due out",
       "tap-to-enlarge": "Tap to enlarge"
@@ -1302,6 +1306,8 @@
         "model": "Model",
         "created-by": "Created by",
         "view-additional-photos": "View additional photos",
+        "choose-model": "Choose model",
+        "select":  "Select",
         "view-attachments": "View attachments",
         "location-information": "Location information",
         "reassign-task": "Reassign task",

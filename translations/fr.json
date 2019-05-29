@@ -404,10 +404,14 @@
         "tasks": "Tâches",
         "floor": "Etage",
         "paused-rooms": "Chambres mises en pause",
+        "cleaning-rooms": "Cleaning rooms",
         "paused": "Mise en pause",
         "priority-rooms": "Chambres en priorité",
         "close-floor": "Fermer la fenêtre",
         "rooms": "Chambres",
+        "scheduled": "Chambres programmees",
+        "show-more": "Afficher tout",
+        "show-less": "Limiter aux programmees",
         "credits": "Crédits"
       }
     },
@@ -468,7 +472,10 @@
         "expired": "Expiré",
         "refused": "Refusé",
         "delete": "Annuler",
-        "closed": "Fermé"
+        "closed": "Fermé",
+        "found": "Trouvé",
+        "show-all": "Tout afficher",
+        "show-only-open": "Tickets ouverts"
       },
       "modal": {
         "guest-signature-optional": "Signature client (option)",
@@ -620,6 +627,7 @@
       "area": "Area",
       "asset": "Equipement",
       "action": "Action",
+      "model": "Model",
       "guest": "Client",
       "due-out": "Départ le",
       "tap-to-enlarge": "Toucher pour agrandir"
@@ -1245,6 +1253,8 @@
         "model": "Modèle",
         "created-by": "Créée par",
         "view-additional-photos": "Photos additionnelles",
+        "choose-model": "Choisir le modèle",
+        "select":  "Sélectionner",
         "view-attachments": "Doc attaché à l'équipment",
         "location-information": "Information lieu",
         "reassign-task": "Reassignation",
