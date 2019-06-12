@@ -513,6 +513,7 @@
       "group": "Groupe",
       "acknowledge": "Vue",
       "send": "Envoyer",
+      "search": "Rechercher",
       "search-users": "Rechercher un utilisateur",
       "to": "a :",
       "no-location": "Pas de lieu",
@@ -561,6 +562,7 @@
       "maintenance": "Maintenance",
       "prev": "Précédent",
       "today": "Aujourd’hui",
+      "tomorrow": "Demain",
       "completed": "Completée",
       "notifications": "Notifications",
       "all-runners": "Tous les Equipiers / Runners",
@@ -630,7 +632,10 @@
       "model": "Model",
       "guest": "Client",
       "due-out": "Départ le",
-      "tap-to-enlarge": "Toucher pour agrandir"
+      "tap-to-enlarge": "Toucher pour agrandir",
+      "categories": "Catégories",
+      "status": "Statut",
+      "calendar": "Calendrier"
     },
     "realtime": {
       "index": {
@@ -760,6 +765,7 @@
         "turndown-service": "Service Couverture",
         "lost-found": "Objets trouvés",
         "room": "Chambre",
+        "filter-tasks": "Vue par filtres",
         "inventory": "Gestion stock",
         "maintenance": "Maintenance",
         "home": "Page Principale",
@@ -1141,6 +1147,12 @@
     }
   },
   "maintenance": {
+    "filter-tasks": {
+      "index": {
+        "filter-tasks": "Vue par filtres",
+        "select-one": "Sélectionnez au moins 1 filtre"
+      }
+    },
     "filters": {
       "index": {
         "hide-all": "Tout cacher",

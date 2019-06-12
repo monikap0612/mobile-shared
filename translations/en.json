@@ -530,6 +530,7 @@
       "group": "Group",
       "acknowledge": "Acknowledge",
       "send": "Send",
+      "search": "Search",
       "search-users": "Search users",
       "to": "To",
       "no-location": "No location",
@@ -579,6 +580,7 @@
       "maintenance": "Maintenance",
       "prev": "Prev",
       "today": "Today",
+      "tomorrow": "Tomorrow",
       "completed": "Completed",
       "notifications": "Notifications",
       "all-runners": "All Runners",
@@ -654,7 +656,10 @@
       "model": "Model",
       "guest": "Guest",
       "due-out": "Due out",
-      "tap-to-enlarge": "Tap to enlarge"
+      "tap-to-enlarge": "Tap to enlarge",
+      "categories": "Categories",
+      "status": "Status",
+      "calendar": "Calendar"
     },
     "realtime": {
       "index": {
@@ -788,6 +793,7 @@
         "turndown-service": "Turndown Service",
         "lost-found": "Lost & Found",
         "room": "Room",
+        "filter-tasks": "Filter Tasks",
         "inventory": "Inventory",
         "maintenance": "Maintenance",
         "home": "Home",
@@ -1184,6 +1190,12 @@
     }
   },
   "maintenance": {
+    "filter-tasks": {
+      "index": {
+        "filter-tasks": "Filter tasks",
+        "select-one": "Select at least one filter"
+      }
+    },
     "on-duty": {
       "index": {
         "you-are-currently": "You are currently",
