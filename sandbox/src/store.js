@@ -30,12 +30,12 @@ export default () => {
     if (IS_DEBUG) {
       enhancers = compose(
         applyMiddleware(...middleware),
-        autoRehydrate()
+        // autoRehydrate()
       );
     } else {
       enhancers = compose(
         applyMiddleware(...middleware),
-        autoRehydrate()
+        // autoRehydrate()
       );
     }
 
