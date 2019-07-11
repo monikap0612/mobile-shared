@@ -659,7 +659,13 @@
       "tap-to-enlarge": "Tap to enlarge",
       "categories": "Categories",
       "status": "Status",
-      "calendar": "Calendar"
+      "calendar": "Calendar",
+      "additional-information": "Additional Information",
+      "address": "Address",
+      "access": "Access",
+      "wifi": "WiFi",
+      "trash": "Trash",
+      "parking": "Parking"
     },
     "realtime": {
       "index": {
