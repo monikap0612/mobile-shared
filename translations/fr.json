@@ -464,11 +464,14 @@
       "index": {
         "open": "Ouvert",
         "emailed": "Email envoyé",
-        "phoned": "Contacté (tel)",
-        "pending": "En attente",
-        "waiting": "Attente confirmation",
+        "with-reception": "A la Réception",
+        "phoned": "Client contacté",
+        "pending": "Client indécis",
+        "waiting": "En attente FdC",
         "mailed": "Expédié",
         "hand-delivered": "Remis en main propre",
+        "holding": "Attente retour client",
+        "holding-lt": "En garde",
         "expired": "Expiré",
         "refused": "Refusé",
         "delete": "Annuler",
@@ -480,7 +483,8 @@
       "modal": {
         "guest-signature-optional": "Signature client (option)",
         "notes-optional": "Note (option)",
-        "added-photos-optional": "Photos ajoutées (option)"
+        "added-photos-optional": "Photos ajoutées (option)",
+        "update-status": ""
       }
     },
     "popup": {
