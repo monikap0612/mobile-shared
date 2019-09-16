@@ -206,6 +206,7 @@
         "inventory-restock": "Restock inventory",
         "notifications": "Notifications",
         "turndown-service": "Turndown service",
+        "check-ins-outs": "Check Ins & Outs",
         "audits": "Audits",
         "audit": "Audit",
         "create-audit": "Create Audit",
@@ -481,7 +482,7 @@
       "index": {
         "open": "Open",
         "emailed": "Emailed",
-        "with-reception": "With reception",
+        "reception": "With reception",
         "phoned": "Phoned",
         "pending": "Pending guest",
         "waiting": "Contacted and waiting",
@@ -500,7 +501,8 @@
       "modal": {
         "guest-signature-optional": "Guest signature (optional)",
         "notes-optional": "Notes (optional)",
-        "added-photos-optional": "Added photos (optional)"
+        "added-photos-optional": "Added photos (optional)",
+        "update-status": "Update status"
       }
     },
     "popup": {
@@ -602,6 +604,7 @@
       "select-locations": "Select locations",
       "search-tasks": "Search tasks",
       "send-maintenance-task": "Send maintenance task",
+      "send-task": "Send task",
       "runner": "Runner",
       "locations": "Locations",
       "accept": "Accept",
@@ -1119,6 +1122,7 @@
         "information": "Information",
         "hsk-tasks": "Hsk tasks",
         "maintenances": "Maintenances",
+        "concierge": "Concierge",
         "catalog": "Catalog",
         "lost-found": "Lost & found",
         "image-about-how-the-room-should-look": "Image about how the room should look",
@@ -1161,7 +1165,7 @@
         "notifications": "Notifications",
         "planning": "Planning",
         "maintenance": "Maintenance",
-        "maintenances": "Maintenances",
+        "concierge": "Concierge",
         "main": "Main",
         "history": "History",
         "turndown-service": "Turndown Service",
