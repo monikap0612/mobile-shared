@@ -1,8 +1,8 @@
 'use strict';
 
-const { NativeModules, Platform, PushNotificationIOS, Alert } = require('react-native');
+const { NativeModules, Platform, Alert } = require('react-native');
 const DeviceInfo = require('react-native-device-info');
-
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 const Pusher = NativeModules.RNPusher ;
 
